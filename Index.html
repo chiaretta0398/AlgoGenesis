@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoGenesis | Corso AI Developer - Chiara Echraibi</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151c2c;
+            --card-border: #232f48;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-success: #34d399;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(21, 28, 44, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .logo p {
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+        }
+
+        .progress-bar-bg {
+            width: 150px;
+            height: 10px;
+            background: #1e293b;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient);
+            transition: width 0.4s ease;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem 1rem;
+            background: #0f1523;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-primary);
+            color: #0b0f19;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.5rem;
+        }
+
+        code {
+            background: #090d16;
+            color: var(--accent-success);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        pre {
+            background: #090d16;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--card-border);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .flashcard {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .flashcard-front {
+            background: var(--card-bg);
+            color: var(--accent-primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .flashcard-back {
+            background: #1c263b;
+            color: var(--text-main);
+            transform: rotateY(180deg);
+            font-size: 0.95rem;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: #0f1523;
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent-primary);
+            background: #182238;
+        }
+
+        .quiz-option.correct {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: var(--accent-success);
+            color: var(--accent-success);
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(248, 113, 113, 0.2);
+            border-color: #f87171;
+            color: #f87171;
+        }
+
+        /* AI Chat Assistant Widget */
+        .chat-widget {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+        }
+
+        .message.bot {
+            background: #1c263b;
+            color: var(--text-main);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .message.user {
+            background: var(--accent-primary);
+            color: #0b0f19;
+            align-self: flex-end;
+            font-weight: 600;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid var(--card-border);
+            gap: 0.5rem;
+        }
+
+        .chat-input-area input {
+            flex-grow: 1;
+            background: #090d16;
+            border: 1px solid var(--card-border);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        .chat-input-area button {
+            background: var(--gradient);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            color: #0b0f19;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.9rem;
+            background: #080b12;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AlgoGenesis 🚀</h1>
+            <p>Corso creato dalla developer Chiara Echraibi</p>
+        </div>
+        <div class="progress-container">
+            <span style="font-size:0.85rem; color: var(--text-muted);">Progresso Corso:</span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progressFill"></div>
+            </div>
+            <span id="progressText" style="font-weight: bold; font-size: 0.85rem; color: var(--accent-primary);">0%</span>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('teoria')">📖 Teoria e Lezioni</button>
+        <button class="tab-btn" onclick="switchTab('flashcards')">🎴 Flashcards</button>
+        <button class="tab-btn" onclick="switchTab('quiz')">✍️ Quiz Pratico</button>
+        <button class="tab-btn" onclick="switchTab('chat')">🤖 Assistente IA</button>
+    </nav>
+
+    <main>
+        <!-- SEZIONE TEORIA -->
+        <div id="teoria" class="tab-content active">
+            <div class="card">
+                <h2>Modulo 1: Fondamenti dell'Intelligenza Artificiale</h2>
+                <p>L'<strong>Intelligenza Artificiale (IA)</strong> è il ramo dell'informatica che sviluppa sistemi in grado di svolgere compiti che richiederebbero l'intelligenza umana (ragionamento, apprendimento, risoluzione di problemi).</p>
+                <br>
+                <h3>1.1 AI vs Machine Learning vs Deep Learning</h3>
+                <ul>
+                    <li><strong>AI (Intelligenza Artificiale):</strong> Il concetto macroscopico di macchine "intelligenti".</li>
+                    <li><strong>Machine Learning (ML):</strong> Sottoinsieme dell'IA in cui gli algoritmi imparano dai dati invece di essere programmati con regole fisse.</li>
+                    <li><strong>Deep Learning (DL):</strong> Sottoinsieme del ML basato su Reti Neurali Artificiali a più strati.</li>
+                </ul>
+                <br>
+                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1rem;">✅ Segna Modulo 1 come Completato</button>
+            </div>
+
+            <div class="card">
+                <h2>Modulo 2: Python per sviluppatori AI</h2>
+                <p>Python è il linguaggio standard per l'IA grazie alle sue librerie essenziali come <code>NumPy</code>, <code>Pandas</code>, e <code>PyTorch</code>.</p>
+                
+                <pre><code># Esempio Python: La tua prima Rete Neurale Concettuale
+def neurone(input_dato, peso, bias):
+    attivazione = (input_dato * peso) + bias
+    return 1 if attivazione > 0 else 0
+
+print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
+
+                <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1rem;">✅ Segna Modulo 2 come Completato</button>
+            </div>
+
+            <div class="card">
+                <h2>Modulo 3: Reti Neurali e Machine Learning</h2>
+                <p>Un modello di Machine Learning apprende regolando i suoi <strong>pesi (weights)</strong> e <strong>bias</strong> durante una fase chiamata <em>Addestramento (Training)</em>, riducendo l'errore calcolato da una <em>Loss Function</em>.</p>
+                <button class="tab-btn" onclick="markCompleted(75)" style="margin-top: 1rem;">✅ Segna Modulo 3 come Completato</button>
+            </div>
+        </div>
+
+        <!-- SEZIONE FLASHCARDS -->
+        <div id="flashcards" class="tab-content">
+            <div class="flashcard-grid">
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">Cos'è il Machine Learning?</div>
+                        <div class="flashcard-back">È una branca dell'IA in cui i computer imparano a riconoscere pattern e prendere decisioni analizzando grandi quantità di dati, senza istruzioni esplicite.</div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">A cosa serve la Loss Function?</div>
+                        <div class="flashcard-back">Misura la distanza (l'errore) tra la previsione fatta dal modello IA e il valore reale desiderato.</div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">Qual è la funzione del Bias?</div>
+                        <div class="flashcard-back">È un valore aggiunto al calcolo del neurone per consentire al modello di adattarsi meglio e spostare l'attivazione a destra o sinistra.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEZIONE QUIZ -->
+        <div id="quiz" class="tab-content">
+            <div class="card">
+                <h2>Verifica le tue Conoscenze</h2>
+                <p style="margin-bottom: 1.5rem;">Domanda 1: Quale sottocampo dell'IA sfrutta le Reti Neurali Artificiali multilivello?</p>
+                
+                <button class="quiz-option" onclick="checkQuiz(this, false)">A) Programmazione orientata agli oggetti</button>
+                <button class="quiz-option" onclick="checkQuiz(this, true)">B) Deep Learning</button>
+                <button class="quiz-option" onclick="checkQuiz(this, false)">C) Database Relazionali</button>
+                
+                <div id="quizFeedback" style="margin-top: 1rem; font-weight: bold;"></div>
+            </div>
+        </div>
+
+        <!-- SEZIONE CHATBOT IA -->
+        <div id="chat" class="tab-content">
+            <div class="card">
+                <h2>Tutor Virtuale AlgoGenesis</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Hai dubbi sulla teoria o su Python? Chiedi al tutor interattivo del corso!</p>
+                
+                <div class="chat-widget">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot">Ciao Chiara! Sono il tutor virtuale del tuo corso AlgoGenesis. Come posso aiutarti con la lezione di oggi?</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="userInput" placeholder="Scrivi una domanda sull'IA..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <button onclick="sendMessage()">Invia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AlgoGenesis — Progetto sviluppato da Chiara Echraibi. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        let currentProgress = 0;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markCompleted(amount) {
+            if (amount > currentProgress) {
+                currentProgress = amount;
+                document.getElementById('progressFill').style.width = currentProgress + '%';
+                document.getElementById('progressText').innerText = currentProgress + '%';
+            }
+        }
+
+        function checkQuiz(button, isCorrect) {
+            const feedback = document.getElementById('quizFeedback');
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options.forEach(opt => opt.disabled = true);
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                feedback.innerText = "✨ Corretto! Il Deep Learning si basa proprio sulle reti neurali complesse.";
+                feedback.style.color = "var(--accent-success)";
+                markCompleted(100);
+            } else {
+                button.classList.add('incorrect');
+                feedback.innerText = "❌ Risposta errata. Riprova rileggendo il Modulo 1!";
+                feedback.style.color = "#f87171";
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chatMessages = document.getElementById('chatMessages');
+
+            // Messaggio Utente
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.innerText = text;
+            chatMessages.appendChild(userMsg);
+
+            input.value = '';
+
+            // Risposta automatica Bot
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'message bot';
+                
+                const lower = text.toLowerCase();
+                if (lower.includes('python')) {
+                    botMsg.innerText = "Python è fantastico! Nell'IA lo usiamo con librerie come PyTorch o TensorFlow per definire le strutture dei modelli.";
+                } else if (lower.includes('bias') || lower.includes('peso')) {
+                    botMsg.innerText = "I pesi e i bias sono i parametri che la rete neurale modifica durante l'addestramento per ridurre l'errore!";
+                } else {
+                    botMsg.innerText = "Ottima domanda! Nel corso AlgoGenesis impareremo ad approfondire tutti questi aspetti passo dopo passo.";
+                }
+
+                chatMessages.appendChild(botMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 600);
+        }
+    </script>
+</body>
+</html>
