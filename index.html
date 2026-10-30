@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgoGenesis | Da Zero ad AI Developer - Chiara Echraibi</title>
+    <title>AlgoGenesis | Corso Completo AI Developer - Chiara Echraibi</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -27,14 +27,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background: rgba(21, 28, 44, 0.9);
+            background: rgba(21, 28, 44, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
             position: sticky;
@@ -136,40 +136,41 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .card h2 {
             color: var(--accent-primary);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
             border-bottom: 1px solid var(--card-border);
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.8rem;
         }
 
         .card h3 {
             color: var(--accent-secondary);
-            margin: 1.5rem 0 0.8rem 0;
-            font-size: 1.25rem;
+            margin: 1.8rem 0 0.8rem 0;
+            font-size: 1.3rem;
         }
 
         p, li {
             color: #cbd5e1;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 1.02rem;
         }
 
         ul, ol {
             padding-left: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .highlight-box {
             background: rgba(56, 189, 248, 0.08);
             border-left: 4px solid var(--accent-primary);
-            padding: 1rem 1.2rem;
-            margin: 1.2rem 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
         }
 
@@ -184,10 +185,10 @@
 
         pre {
             background: #090d16;
-            padding: 1.2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             overflow-x: auto;
-            margin: 1.2rem 0;
+            margin: 1.5rem 0;
             border: 1px solid var(--card-border);
         }
 
@@ -206,7 +207,7 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            height: 220px;
+            height: 240px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -240,7 +241,7 @@
         .flashcard-front {
             background: var(--card-bg);
             color: var(--accent-primary);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
         }
 
@@ -249,14 +250,15 @@
             color: var(--text-main);
             transform: rotateY(180deg);
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            text-align: left;
         }
 
         .quiz-option {
             display: block;
             width: 100%;
-            padding: 1rem;
-            margin: 0.6rem 0;
+            padding: 1.1rem;
+            margin: 0.8rem 0;
             background: #0f1523;
             border: 1px solid var(--card-border);
             color: var(--text-main);
@@ -264,7 +266,7 @@
             text-align: left;
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .quiz-option:hover {
@@ -290,12 +292,12 @@
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            height: 520px;
+            height: 550px;
         }
 
         .chat-messages {
             flex-grow: 1;
-            padding: 1rem;
+            padding: 1.2rem;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -303,10 +305,11 @@
         }
 
         .message {
-            max-width: 80%;
-            padding: 0.8rem 1.2rem;
+            max-width: 85%;
+            padding: 1rem 1.2rem;
             border-radius: 12px;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .message.bot {
@@ -332,19 +335,21 @@
         }
 
         .chat-input-area input {
+            flex-grow: f;
             flex-grow: 1;
             background: #090d16;
             border: 1px solid var(--card-border);
-            padding: 0.8rem 1rem;
+            padding: 0.9rem 1rem;
             border-radius: 8px;
             color: var(--text-main);
             outline: none;
+            font-size: 1rem;
         }
 
         .chat-input-area button {
             background: var(--gradient);
             border: none;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.6rem;
             border-radius: 8px;
             color: #0b0f19;
             font-weight: bold;
@@ -366,10 +371,10 @@
     <header>
         <div class="logo">
             <h1>AlgoGenesis 🚀</h1>
-            <p>Corso creato dalla developer Chiara Echraibi</p>
+            <p>Corso professionale ideato da Chiara Echraibi</p>
         </div>
         <div class="progress-container">
-            <span style="font-size:0.85rem; color: var(--text-muted);">Avanzamento Corso:</span>
+            <span style="font-size:0.85rem; color: var(--text-muted);">Completamento:</span>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progressFill"></div>
             </div>
@@ -378,179 +383,192 @@
     </header>
 
     <nav class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('teoria', this)">📖 Corso Teorico</button>
-        <button class="tab-btn" onclick="switchTab('flashcards', this)">🎴 Flashcards Studio</button>
-        <button class="tab-btn" onclick="switchTab('quiz', this)">✍️ Test di Verifica</button>
-        <button class="tab-btn" onclick="switchTab('chat', this)">🤖 Tutor IA Integrato</button>
+        <button class="tab-btn active" onclick="switchTab('teoria', this)">📖 Teoria Approfondita</button>
+        <button class="tab-btn" onclick="switchTab('flashcards', this)">🎴 Flashcards</button>
+        <button class="tab-btn" onclick="switchTab('quiz', this)">✍️ Quiz di Verifica</button>
+        <button class="tab-btn" onclick="switchTab('chat', this)">🤖 Tutor IA</button>
     </nav>
 
     <main>
-        <!-- SEZIONE TEORIA COMPLETA -->
+        <!-- SEZIONE TEORIA COMPLETA E DETTAGLIATA -->
         <div id="teoria" class="tab-content active">
             
             <!-- MODULO 1 -->
             <article class="card">
-                <h2>Modulo 1: Le Basi dell'Intelligenza Artificiale e del Machine Learning</h2>
+                <h2>Modulo 1: Le Basi Fondamentali dell'Intelligenza Artificiale</h2>
                 
-                <h3>1.1 Cos'è davvero l'Intelligenza Artificiale?</h3>
-                <p>L'<strong>Intelligenza Artificiale (IA)</strong> è la disciplina dell'informatica che crea sistemi capaci di svolgere compiti complessi che richiederebbero facoltà cognitive umane: comprensione del linguaggio, riconoscimento visivo, pianificazione e risoluzione di problemi.</p>
-                
-                <div class="highlight-box">
-                    <strong>Il Cambio di Paradigma:</strong><br>
-                    • <strong>Programmazione Tradizionale:</strong> Dati + Regole (Codice scritto a mano) ➔ Risultati.<br>
-                    • <strong>Machine Learning (ML):</strong> Dati + Risultati Desiderati ➔ L'algoritmo impara le Regole da solo.
-                </div>
-
-                <h3>1.2 I Tre Pilastri del Machine Learning</h3>
+                <h3>1.1 Introduzione Concettuale: Cos'è l'IA?</h3>
+                <p>Quando parliamo di <strong>Intelligenza Artificiale (IA)</strong>, non dobbiamo immaginarla subito come un robot senziente da film di fantascienza. In informatica, l'IA rappresenta l'insieme di tecniche e modelli matematici che permettono a un software di simulare processi di pensiero umani: analizzare informazioni, riconoscere regolarità, prendere decisioni logiche e correggere i propri errori.</p>
+                <p>Per capire a fondo il cambiamento, è essenziale comprendere la differenza tra il modo in cui i computer venivano programmati decenni fa e come funzionano oggi:</p>
                 <ul>
-                    <li><strong>Supervised Learning (Apprendimento Supervisionato):</strong> Il modello impara da dati "etichettati" (es. immagini contrassegnate come "Gatto" o "Cane"). Si divide in:
-                        <ul>
-                            <li><em>Classificazione:</em> Prevedere categorie discrete (Spam / Non Spam).</li>
-                            <li><em>Regressione:</em> Prevedere valori continui (Prezzo di una casa in base alla metratura).</li>
-                        </ul>
-                    </li>
-                    <li><strong>Unsupervised Learning (Non Supervisionato):</strong> L'algoritmo analizza dati non etichettati per trovare pattern o gruppi nascosti (es. <em>Clustering</em> per segmentare i clienti di un e-commerce).</li>
-                    <li><strong>Reinforcement Learning (Apprendimento per Rinforzo):</strong> Un agente software impara interagendo con un ambiente, ricevendo <em>ricompense</em> per azioni corrette e <em>penalità</em> per errori (usato nei sistemi di guida autonoma o videogiochi).</li>
+                    <li><strong>Programmazione Tradizionale:</strong> L'essere umano scrive esplicitamente le regole e fornisce i dati al computer. Il computer esegue e sputa fuori il risultato. Formula: <code>Dati + Regole rigide = Risultato</code>.</li>
+                    <li><strong>Machine Learning (Apprendimento Automatico):</strong> Invece di scrivere le regole a mano, forniamo al computer i dati storici insieme ai risultati corretti attesi. È l'algoritmo stesso che elabora le statistiche e scopre le regole nascoste. Formula: <code>Dati + Risultati attesi = Regole scoperte dal modello</code>.</li>
                 </ul>
 
-                <h3>1.3 Etica e Bias nei Dati</h3>
-                <p>Gli algoritmi di IA non sono intrinsecamente "neutrali": imparano dai dati storici. Se i dati contengono pregiudizi o disparità (i cosiddetti <strong>bias</strong>), il modello di Machine Learning tenderà a replicarli e amplificarli. Il ruolo dello sviluppatore AI include la pulizia e la valutazione etica del dataset.</p>
+                <h3>1.2 Le Tre Grandi Famiglie dell'Apprendimento</h3>
+                <p>Il Machine Learning non è un blocco unico, ma si suddivide in tre grandi categorie metodologiche a seconda di come il sistema interagisce con i dati:</p>
+                <ul>
+                    <li><strong>1. Apprendimento Supervisionato (Supervised Learning):</strong> Il modello viene addestrato su un dataset "etichettato", ovvero in cui ogni esempio ha già la risposta corretta associata (es. migliaia di foto di email etichettate esplicitamente come "Spam" o "Non Spam"). Si divide in:
+                        <ul>
+                            <li><em>Classificazione:</em> Quando l'obiettivo è predire una categoria discreta (es. "Il tumore è benigno o maligno?").</li>
+                            <li><em>Regressione:</em> Quando l'obiettivo è predire un valore numerico continuo (es. "Quanto costerà questa casa tra due anni?").</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. Apprendimento Non Supervisionato (Unsupervised Learning):</strong> Qui il dataset non ha etichette o risposte predefinite. Il compito dell'algoritmo è analizzare la struttura grezza dei dati per trovare somiglianze nascoste o raggruppamenti naturali. Un esempio classico è il <em>Clustering</em>, usato dai servizi di streaming per raggruppare utenti con gusti cinematografici simili.</li>
+                    <li><strong>3. Apprendimento per Rinforzo (Reinforcement Learning):</strong> L'intelligenza artificiale (chiamata in questo contesto *Agente*) impara a compiere azioni all'interno di un ambiente dinamico per massimizzare una ricompensa numerica cumulativa. Se compie un'azione corretta riceve un premio, se sbaglia riceve una penalità (es. algoritmi di guida autonoma o robotica).</li>
+                </ul>
 
-                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1rem;">✅ Segna Modulo 1 come Completato</button>
+                <h3>1.3 Etica, Trasparenza e Bias nei Dati</h3>
+                <p>Un aspetto cruciale che ogni aspirante AI Developer deve padroneggiare fin dal primo giorno è che <strong>i dati riflettono il mondo reale, inclusi i suoi difetti</strong>. Se addestriamo un modello predittivo usando dati storici affetti da pregiudizi umani o discriminazioni passate, il modello non farà altro che apprendere quei bias e riproporli su scala industriale in modo automatizzato e apparentemente "oggettivo". La cura, la pulizia e la verifica etica del dataset sono responsabilità primarie dello sviluppatore.</p>
+
+                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1.5rem;">✅ Completa Modulo 1</button>
             </article>
 
             <!-- MODULO 2 -->
             <article class="card">
-                <h2>Modulo 2: Matematica essenziale e Python per l'IA</h2>
+                <h2>Modulo 2: Matematica Applicata e Python per l'IA</h2>
 
-                <h3>2.1 Perché Python?</h3>
-                <p>Python è diventato lo standard de facto dell'IA grazie alla sua sintassi pulita e ad un ricco ecosistema di librerie scientifiche.</p>
+                <h3>2.1 Perché proprio Python nel mondo dell'IA?</h3>
+                <p>Python è il linguaggio dominante nell'Intelligenza Artificiale. Non perché sia l'unico esistente, ma perché unisce una sintassi estremamente leggibile (simile all'inglese naturale) a un ecosistema sterminato di librerie open-source ottimizzate in C e C++, capaci di eseguire calcoli complessi a velocità elevatissime.</p>
 
-                <h3>2.2 Le Librerie Fondamentali: NumPy e Pandas</h3>
-                <p><strong>NumPy:</strong> Fornisce la struttura dati <code>ndarray</code> per eseguire calcoli vettoriali rapidi ad altissima velocità.</p>
-                <p><strong>Pandas:</strong> Introduce il <code>DataFrame</code>, una struttura a tabella ideale per la pulizia, l'analisi e la trasformazione dei dati prima del training.</p>
+                <h3>2.2 Le Librerie Cardinali: NumPy e Pandas</h3>
+                <p>Per manipolare i dati prima di darli in pasto a una rete neurale, usiamo due strumenti imprescindibili:</p>
+                <ul>
+                    <li><strong>NumPy (Numerical Python):</strong> Introduce l'oggetto <code>ndarray</code>, un array multidimensionale ottimizzato per eseguire operazioni algebriche su enormi moli di numeri senza rallentamenti.</li>
+                    <li><strong>Pandas:</strong> Strutturato sopra NumPy, introduce il concetto di <code>DataFrame</code> (una tabella di dati simile a Excel ma programmabile), fondamentale per pulire dati mancanti, filtrare righe e preparare i dataset.</li>
+                </ul>
 
                 <pre><code>import numpy as np
 import pandas as pd
 
-# Creazione di un array di input per un modello
-X = np.array([[1.0, 2.5], [3.0, 4.1], [5.2, 1.8]])
+# Creazione di una matrice di input simulata (es. 3 campioni, 2 caratteristiche ciascuno)
+dati_grezzi = [[1.5, 3.2], [2.8, 1.1], [4.0, 5.5]]
+X = np.array(dati_grezzi)
 
-# Definizione dei Pesi (Weights) e Bias
-weights = np.array([0.4, -0.6])
+# Pesi sinaptici iniziali casuali e Bias del modello
+pesi = np.array([0.5, -0.2])
 bias = 0.1
 
-# Calcolo del prodotto scalare (Dot Product)
-previsione = np.dot(X, weights) + bias
-print("Output del calcolo matriciale:", previsione)</code></pre>
+# Esecuzione del calcolo matriciale di base (Forward pass lineare)
+risultato_predizione = np.dot(X, pesi) + bias
+print("Risultati calcolati dal modello lineare:", risultato_predizione)</code></pre>
 
-                <h3>2.3 Le Basi Matematiche: Vettori, Matrici e Gradient Descent</h3>
-                <p>Ogni modello di ML converte le informazioni (immagini, testi, suoni) in <strong>vettori numerici</strong>. Il processo di apprendimento ottimizza questi numeri tramite il <strong>Gradient Descent (Discesa del Gradiente)</strong>, un algoritmo di calcolo infinitesimale che trova i valori ideali dei pesi riducendo gradualmente l'errore.</p>
+                <h3>2.3 Le Basi dell'Algebra Lineare e del Calcolo</h3>
+                <p>Dietro ogni modello di IA c'è la matematica: le immagini vengono lette come matrici di pixel, le parole come vettori di embedding numerici. L'apprendimento del modello sfrutta la <strong>Discesa del Gradiente (Gradient Descent)</strong>, un metodo basato sulle derivate che permette al software di correggere millimetricamente i parametri interni (pesi e bias) passo dopo passo per azzerare l'errore.</p>
 
-                <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1rem;">✅ Segna Modulo 2 come Completato</button>
+                <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1.5rem;">✅ Completa Modulo 2</button>
             </article>
 
             <!-- MODULO 3 -->
             <article class="card">
-                <h2>Modulo 3: Reti Neurali e Deep Learning Fondamentale</h2>
+                <h2>Modulo 3: Reti Neurali e Deep Learning</h2>
 
-                <h3>3.1 Anatomia del Perceptron (Il Neurone Artificiale)</h3>
-                <p>La rete neurale artificiale trae ispirazione dalla struttura biologica del cervello. L'unità fondamentale è il <strong>Perceptron</strong>:</p>
+                <h3>3.1 Anatomia del Perceptron: Il Singolo Neurone Artificiale</h3>
+                <p>Il <strong>Deep Learning</strong> (apprendimento profondo) si basa sull'impilamento di migliaia o milioni di neuroni artificiali interconnessi, ispirati liberamente alla struttura biologica del cervello umano. L'unità elementare è il <strong>Perceptron</strong>.</p>
                 
                 <div class="highlight-box">
-                    <strong>Formula Matematica dell'Output:</strong><br>
-                    <code>y = Funzione_di_Attivazione( (Input_1 * W1 + Input_2 * W2 + ...) + Bias )</code>
+                    <strong>Come lavora un neurone artificiale:</strong><br>
+                    1. Riceve diversi valori di input ($x_1, x_2, \dots$).<br>
+                    2. A ciascun input viene associato un <strong>peso ($w$)</strong> che ne determina l'importanza o l'influenza.<br>
+                    3. Il neurone somma tutti i prodotti (input $\times$ peso) e aggiunge una costante chiamata <strong>Bias</strong>.<br>
+                    4. Il risultato attraversa una <strong>Funzione di Attivazione</strong> che decide se il neurone deve "attivarsi" (passare il segnale) oppure no.
                 </div>
 
                 <h3>3.2 Le Funzioni di Attivazione</h3>
-                <p>Introducono la non-linearità, consentendo alla rete di imparare concetti complessi:</p>
+                <p>Senza le funzioni di attivazione, una rete neurale si limiterebbe a fare calcoli lineari, risultando incapace di risolvere problemi complessi (come riconoscere il volto di una persona in un'immagine). Le principali sono:</p>
                 <ul>
-                    <li><strong>ReLU (Rectified Linear Unit):</strong> Trasforma tutti i valori negativi in 0. È la più utilizzata negli strati nascosti.</li>
-                    <li><strong>Sigmoid:</strong> Comprime i valori tra 0 e 1 (ideale per la classificazione binaria).</li>
-                    <li><strong>Softmax:</strong> Trasforma i valori in un insieme di probabilità la cui somma è 1 (classificazione multi-classe).</li>
+                    <li><strong>ReLU (Rectified Linear Unit):</strong> Se il valore in input è negativo lo azzera ($0$), se è positivo lo lascia inalterato. È la più veloce ed efficiente negli strati interni.</li>
+                    <li><strong>Sigmoid:</strong> Comprende e schiaccia qualsiasi numero in un intervallo compreso strettamente tra 0 e 1, ideale per problemi di classificazione binaria.</li>
+                    <li><strong>Softmax:</strong> Utilizzata nello strato finale per convertire i punteggi grezzi in una distribuzione di probabilità la cui somma totale fa 1.</li>
                 </ul>
 
                 <h3>3.3 Il Ciclo di Addestramento (Training Loop)</h3>
+                <p>L'addestramento di una rete neurale non è altro che un processo iterativo diviso in quattro fasi ripetute milioni di volte:</p>
                 <ol>
-                    <li><strong>Forward Propagation:</strong> I dati attraversano la rete dall'input all'output generato.</li>
-                    <li><strong>Calcolo della Loss Function (Funzione di Perdita):</strong> Calcola la differenza precisa tra l'output predetto dal modello e il dato reale.</li>
-                    <li><strong>Backpropagation:</strong> L'errore viene propagato all'indietro usando la regola della catena del calcolo differenziale.</li>
-                    <li><strong>Aggiornamento Pesi:</strong> Gli ottimizzatori (es. <em>Adam</em>, <em>SGD</em>) modificano i pesi per migliorare la risposta al ciclo successivo.</li>
+                    <li><strong>Forward Propagation (Propulsione in avanti):</strong> I dati di input entrano nella rete, attraversano gli strati nascosti e producono una previsione.</li>
+                    <li><strong>Loss Function (Calcolo della Perdita):</strong> Una funzione matematica misura quanto la previsione del modello si discosta dalla realtà effettiva.</li>
+                    <li><strong>Backpropagation (Propulsione all'indietro):</strong> Sfruttando la derivata e la regola della catena del calcolo infinitesimale, l'errore viene rimandato all'indietro strato per strato per capire la colpa di ciascun peso.</li>
+                    <li><strong>Ottimizzazione:</strong> L'algoritmo di ottimizzazione (es. <em>Adam</em> o <em>SGD</em>) aggiorna i pesi nella direzione corretta per fare meno errori la volta successiva.</li>
                 </ol>
 
-                <button class="tab-btn" onclick="markCompleted(75)" style="margin-top: 1rem;">✅ Segna Modulo 3 come Completato</button>
+                <button class="tab-btn" onclick="markCompleted(75)" style="margin-top: 1.5rem;">✅ Completa Modulo 3</button>
             </article>
 
             <!-- MODULO 4 -->
             <article class="card">
-                <h2>Modulo 4: Progetti Pratici e Framework di Produzione</h2>
+                <h2>Modulo 4: Framework Avanzati e Sviluppo di Progetti Reali</h2>
 
-                <h3>4.1 I Framework di riferimento: PyTorch e TensorFlow</h3>
-                <p>Per costruire modelli complessi senza riscrivere le equazioni matematiche da zero, gli AI Developer utilizzano framework ad alte prestazioni come <strong>PyTorch</strong> (sviluppato da Meta) e <strong>TensorFlow / Keras</strong> (sviluppato da Google).</p>
+                <h3>4.1 I Framework di Riferimento: PyTorch e TensorFlow</h3>
+                <p>Nessun AI Developer scrive reti neurali complesse partendo da zero con le sole funzioni matematiche pure di Python. Si utilizzano librerie avanzate chiamate framework di Deep Learning:</p>
+                <ul>
+                    <li><strong>PyTorch:</strong> Sviluppato e mantenuto da Meta, è diventato il preferito dalla comunità di ricerca e sviluppo per la sua flessibilità e programmazione intuitiva basata su grafi dinamici.</li>
+                    <li><strong>TensorFlow / Keras:</strong> Creato da Google, è storicamente uno dei più solidi e adottati in ambito aziendale e produttivo per il deployment su larga scala.</li>
+                </ul>
 
-                <h3>4.2 Esempio Pratico in PyTorch: Una Rete Neurale Completa</h3>
+                <h3>4.2 Esempio Pratico: Scrivere una Rete Neurale in PyTorch</h3>
                 <pre><code>import torch
 import torch.nn as nn
 
-# Definizione della struttura dell'architettura neurale
-class AlgoGenesisModel(nn.Module):
+# Struttura di una classe che eredita da nn.Module in PyTorch
+class CorsoAlgoGenesis(nn.Module):
     def __init__(self):
-        super(AlgoGenesisModel, self).__init__()
-        self.strato_ingresso = nn.Linear(in_features=10, out_features=64)
-        self.relu = nn.ReLU()
-        self.strato_uscita = nn.Linear(in_features=64, out_features=1)
+        super(CorsoAlgoGenesis, self).__init__()
+        # Strato nascosto: da 16 input a 32 feature intermedie
+        self.layer_1 = nn.Linear(16, 32)
+        self.attivazione = nn.ReLU()
+        # Strato di output finale: da 32 a 1 singola predizione
+        self.layer_2 = nn.Linear(32, 1)
         
     def forward(self, x):
-        x = self.strato_ingresso(x)
-        x = self.relu(x)
-        x = self.strato_uscita(x)
+        x = self.layer_1(x)
+        x = self.attivazione(x)
+        x = self.layer_2(x)
         return x
 
-# Istanza del modello
-modello = AlgoGenesisModel()
-print("Architettura della Rete Neurale AlgoGenesis:")
-print(modello)</code></pre>
+# Istanza del modello pronto per l'addestramento
+rete_neurale = CorsoAlgoGenesis()
+print("Modello PyTorch inizializzato con successo!")</code></pre>
 
-                <h3>4.3 Overfitting e Deployment</h3>
-                <p>Uno dei problemi principali del Machine Learning è l'<strong>Overfitting</strong> (quando il modello impara a memoria i dati di addestramento ma fallisce sui dati nuovi). Si previene usando tecniche di <em>Dropout</em>, <em>Regularization</em> e dividendo il dataset in set di <strong>Training</strong> e <strong>Validation</strong>.</p>
-                <p>Una volta addestrato e validato, il modello viene distribuito (<em>deployment</em>) tramite API web per essere integrato all'interno di applicazioni interattive o app aziendali.</p>
+                <h3>4.3 Overfitting, Validazione e Deployment</h3>
+                <p>Il più grande pericolo durante lo sviluppo di un modello è l'<strong>Overfitting</strong> (sovradattamento): il fenomeno per cui il modello impara a memoria i dati di addestramento specifici ma non sa generalizzare sui dati reali che incontrerà fuori dal laboratorio. Per combatterlo si usano tecniche come il <em>Dropout</em> e la divisione rigorosa del dataset in set di training, validation e test.</p>
+                <p>Infine, una volta validato con successo, il modello viene esportato e integrato in un'applicazione web o mobile tramite API (ad esempio usando framework come FastAPI o Flask), esattamente come stiamo facendo per questa piattaforma interattiva!</p>
 
-                <button class="tab-btn" onclick="markCompleted(100)" style="margin-top: 1rem;">✅ Segna Modulo 4 come Completato</button>
+                <button class="tab-btn" onclick="markCompleted(100)" style="margin-top: 1.5rem;">✅ Completa Modulo 4</button>
             </article>
         </div>
 
         <!-- SEZIONE FLASHCARDS -->
         <div id="flashcards" class="tab-content">
             <div class="card">
-                <h2>Flashcards di Ripasso Rapido</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Tocca una carta per girarla e verificare la spiegazione teorica.</p>
+                <h2>Flashcards di Ripasso e Concetti Chiave</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Tocca una carta per capovolgerla e ripassare la definizione teorica completa.</p>
                 
                 <div class="flashcard-grid">
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">Supervised vs Unsupervised Learning</div>
-                            <div class="flashcard-back">Il Supervised usa dati etichettati (input + risposta corretta). L'Unsupervised lavora su dati grezzi per scoprire pattern o raggruppamenti automatici.</div>
+                            <div class="flashcard-front">Supervised vs Unsupervised</div>
+                            <div class="flashcard-back">Il Supervised sfrutta dati etichettati (es. input + risposta corretta) per classificare o predire. L'Unsupervised analizza dati grezzi senza etichette per scoprire raggruppamenti e pattern latenti autonomamente.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">Cos'è il Gradient Descent?</div>
-                            <div class="flashcard-back">È l'algoritmo di ottimizzazione matematica che calcola la direzione in cui modificare i pesi per ridurre al minimo l'errore (Loss).</div>
+                            <div class="flashcard-back">È l'algoritmo di ottimizzazione iterativo basato sulle derivate che calcola la direzione in cui correggere i pesi sinaptici per ridurre al minimo l'errore commesso dalla Loss Function.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">Ruolo del Dropout</div>
-                            <div class="flashcard-back">Disattiva casualmente una percentuale di neuroni durante l'addestramento per evitare l'overfitting e rendere il modello più robusto.</div>
+                            <div class="flashcard-front">A cosa serve la Funzione ReLU?</div>
+                            <div class="flashcard-back">È una funzione di attivazione non-lineare che azzera i valori negativi e lascia passare inalterati quelli positivi. È fondamentale per permettere alle reti neurali di apprendere relazioni complesse.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">A cosa serve la ReLU?</div>
-                            <div class="flashcard-back">La ReLU è una funzione di attivazione che azzera i valori negativi. Aggiunge non-linearità con una grande efficienza computazionale.</div>
+                            <div class="flashcard-front">Cos'è l'Overfitting?</div>
+                            <div class="flashcard-back">È il difetto per cui un modello impara "a memoria" i dati di training specifici perdendo la capacità di generalizzare sui dati nuovi o reali. Si previene con tecniche di regolarizzazione e Dropout.</div>
                         </div>
                     </div>
                 </div>
@@ -560,24 +578,24 @@ print(modello)</code></pre>
         <!-- SEZIONE QUIZ -->
         <div id="quiz" class="tab-content">
             <div class="card">
-                <h2>Test di Verifica Conoscenze</h2>
+                <h2>Verifica delle Competenze</h2>
                 
-                <div style="margin-bottom: 2rem;">
-                    <p style="font-weight: bold; color: var(--accent-primary);">Domanda 1: Quale libreria Python è fondamentale per manipolare dati in formato Tabellare/DataFrame?</p>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">A) PyTorch</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q1')">B) Pandas</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">C) Matplotlib</button>
-                    <div id="q1Feedback" style="margin-top: 0.5rem; font-weight: bold;"></div>
+                <div style="margin-bottom: 2.5rem;">
+                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.05rem; margin-bottom: 1rem;">Domanda 1: Qual è la differenza fondamentale tra programmazione tradizionale e Machine Learning?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">A) Il Machine Learning non usa computer ma solo carta e penna</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q1')">B) Nella programmazione classica scrivi le regole a mano; nel ML l'algoritmo scopre le regole dai dati</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">C) La programmazione tradizionale è più intelligente del Deep Learning</button>
+                    <div id="q1Feedback" style="margin-top: 0.8rem; font-weight: bold;"></div>
                 </div>
 
-                <hr style="border-color: var(--card-border); margin: 1.5rem 0;">
+                <hr style="border-color: var(--card-border); margin: 2rem 0;">
 
                 <div>
-                    <p style="font-weight: bold; color: var(--accent-primary);">Domanda 2: Cosa si intende con "Backpropagation" in una Rete Neurale?</p>
-                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q2')">A) Il calcolo e la propagazione dell'errore all'indietro per aggiornare i pesi</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">B) L'annullamento della memoria nei dati di input</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">C) La conversione automatica di un testo in audio</button>
-                    <div id="q2Feedback" style="margin-top: 0.5rem; font-weight: bold;"></div>
+                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.05rem; margin-bottom: 1rem;">Domanda 2: Cosa misura la Loss Function (Funzione di Perdita) durante l'addestramento?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q2')">A) L'entità dell'errore tra la previsione del modello e il valore reale atteso</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">B) La quantità di energia elettrica consumata dal computer</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">C) La velocità di connessione a internet del server</button>
+                    <div id="q2Feedback" style="margin-top: 0.8rem; font-weight: bold;"></div>
                 </div>
             </div>
         </div>
@@ -585,15 +603,15 @@ print(modello)</code></pre>
         <!-- SEZIONE CHATBOT IA -->
         <div id="chat" class="tab-content">
             <div class="card">
-                <h2>Tutor Virtuale AlgoGenesis</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Inserisci i tuoi dubbi teorici su Python, sulle reti neurali o sul Machine Learning.</p>
+                <h2>Tutor Didattico AlgoGenesis</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Chiedi qualsiasi chiarimento sui concetti teorici dei moduli, su Python o sulle reti neurali.</p>
                 
                 <div class="chat-widget">
                     <div class="chat-messages" id="chatMessages">
-                        <div class="message bot">Ciao Chiara! Sono il tuo tutor dedicato per il corso AlgoGenesis. Quale argomento o concetto dei 4 moduli vorresti approfondire insieme oggi?</div>
+                        <div class="message bot">Ciao Chiara! Sono il tuo tutor personale per AlgoGenesis. Adesso la teoria è molto più ricca e dettagliata: dimmi pure quale concetto o passaggio dei moduli vuoi approfondire insieme!</div>
                     </div>
                     <div class="chat-input-area">
-                        <input type="text" id="userInput" placeholder="Es. Spiegami cos'è il Gradient Descent..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <input type="text" id="userInput" placeholder="Es. Spiegami meglio la Backpropagation..." onkeypress="if(event.key==='Enter') sendMessage()">
                         <button onclick="sendMessage()">Invia</button>
                     </div>
                 </div>
@@ -602,7 +620,7 @@ print(modello)</code></pre>
     </main>
 
     <footer>
-        <p>&copy; 2026 AlgoGenesis — Corso sviluppato dalla developer Chiara Echraibi. Tutti i diritti riservati.</p>
+        <p>&copy; 2026 AlgoGenesis — Piattaforma creata dalla developer Chiara Echraibi. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
@@ -614,6 +632,7 @@ print(modello)</code></pre>
             
             document.getElementById(tabId).classList.add('active');
             btnElement.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function markCompleted(amount) {
@@ -633,11 +652,11 @@ print(modello)</code></pre>
 
             if (isCorrect) {
                 button.classList.add('correct');
-                feedback.innerText = "✨ Risposta Esatta! Complimenti per la preparazione.";
+                feedback.innerText = "✨ Corretto! Ottima comprensione dei concetti chiave del corso.";
                 feedback.style.color = "var(--accent-success)";
             } else {
                 button.classList.add('incorrect');
-                feedback.innerText = "❌ Risposta non corretta. Controlla il modulo di riferimento nella sezione Teoria!";
+                feedback.innerText = "❌ Risposta non esatta. Rileggi con attenzione i paragrafi teorici del modulo corrispondente!";
                 feedback.style.color = "#f87171";
             }
         }
@@ -661,19 +680,19 @@ print(modello)</code></pre>
                 botMsg.className = 'message bot';
                 
                 const lower = text.toLowerCase();
-                if (lower.includes('python') || lower.includes('pandas') || lower.includes('numpy')) {
-                    botMsg.innerText = "In Python, NumPy e Pandas sono la colonna portante: NumPy gestisce array e operazioni matematiche veloci, mentre Pandas organizza i dati in DataFrame pronte per il preprocessing!";
-                } else if (lower.includes('gradient') || lower.includes('gradiente') || lower.includes('loss')) {
-                    botMsg.innerText = "Il Gradient Descent rileva la pendenza della curva di errore (Loss) e muove i pesi del neurone verso la direzione che minimizza lo sbaglio!";
-                } else if (lower.includes('pytorch') || lower.includes('tensorflow')) {
-                    botMsg.innerText = "PyTorch e TensorFlow ti permettono di definire il flusso dei tensor, applicare l'auto-differenziazione e sfruttare le GPU per accelerare l'addestramento!";
+                if (lower.includes('backprop') || lower.includes('indietro')) {
+                    botMsg.innerText = "La Backpropagation usa il calcolo delle derivate per tracciare a ritroso l'errore commesso dalla rete, consentendo agli ottimizzatori di correggere i pesi di ogni singolo neurone.";
+                } else if (lower.includes('overfitting') || lower.includes('memoria')) {
+                    botMsg.innerText = "L'overfitting si verifica quando un modello impara così bene i dettagli specifici del training set da fallire completamente sui dati nuovi. Si combatte con il Dropout e la validazione incrociata.";
+                } else if (lower.includes('supervised') || lower.includes('etichette')) {
+                    botMsg.innerText = "Nel Supervised Learning ogni dato ha un'etichetta di riscontro (la risposta giusta), mentre nell'Unsupervised l'algoritmo deve scoprire strutture e gruppi nascosti in autonomia.";
                 } else {
-                    botMsg.innerText = "Ottimo quesito! Ricorda che ogni modello parte dall'analisi dei dati per arrivare al calcolo delle probabilità via funzioni di attivazione.";
+                    botMsg.innerText = "È un ottimo spunto di riflessione! Nel percorso AlgoGenesis ogni blocco si basa su dati numerici, matrici e funzioni di attivazione per trasformare l'input grezzo in previsioni intelligenti.";
                 }
 
                 chatMessages.appendChild(botMsg);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 500);
+            }, 600);
         }
     </script>
 </body>
