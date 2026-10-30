@@ -2,7 +2,7 @@ AlgoGenesis 🚀
 
 Il percorso guida per aspiranti AI Developer
 
-Benvenuti in **AlgoGenesis**! Questo corso è pensato per chi vuole muovere i primi passi nel mondo dell'Intelligenza Artificiale, partendo dalle basi fino ad arrivare alla creazione di modelli e applicazioni reali 🤖.
+Benvenuti in **AlgoGenesis**! Questo corso è pensato per chi vuole muovere i primi passi nel mondo dell'Intelligenza Artificiale, partendo dalle basi fino ad arrivare alla creazione di modelli e applicazioni reali.
 
 ---
 
@@ -15,11 +15,11 @@ Benvenuti in **AlgoGenesis**! Questo corso è pensato per chi vuole muovere i pr
 ---
 
 📚 Struttura dei Moduli
-**Modulo 1** Introduzione all'IA e ambiente di lavoro
-**Modulo 2** Fondamenti di Python per sviluppatori
-**Modulo 3** Primi passi con i Dati e le Reti Neurali
-**Modulo 4** Creazione del primo progetto pratico
+1. **Modulo 1:** Introduzione all'IA e ambiente di lavoro
+2. **Modulo 2:** Fondamenti di Python per sviluppatori
+3. **Modulo 3:** Primi passi con i Dati e le Reti Neurali
+4. **Modulo 4:** Creazione del primo progetto pratico
 
 ---
 
-*Corso creato dalla developer Chiara Echraibi*
+*Corso creato dalla developer Chiara Echraibi.*
