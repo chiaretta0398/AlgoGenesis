@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgoGenesis | Corso AI Developer - Chiara Echraibi</title>
+    <title>AlgoGenesis | Da Zero ad AI Developer - Chiara Echraibi</title>
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -27,14 +27,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background: rgba(21, 28, 44, 0.8);
+            background: rgba(21, 28, 44, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
             position: sticky;
@@ -44,6 +44,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo h1 {
@@ -64,14 +66,14 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.4);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             border: 1px solid var(--card-border);
         }
 
         .progress-bar-bg {
-            width: 150px;
+            width: 140px;
             height: 10px;
             background: #1e293b;
             border-radius: 5px;
@@ -88,10 +90,11 @@
         .nav-tabs {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem 1rem;
+            gap: 0.8rem;
+            padding: 1rem;
             background: #0f1523;
             border-bottom: 1px solid var(--card-border);
+            overflow-x: auto;
         }
 
         .tab-btn {
@@ -103,6 +106,7 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .tab-btn.active, .tab-btn:hover {
@@ -115,7 +119,7 @@
         main {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             flex-grow: 1;
             width: 100%;
         }
@@ -140,25 +144,50 @@
         .card h2 {
             color: var(--accent-primary);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             border-bottom: 1px solid var(--card-border);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.6rem;
+        }
+
+        .card h3 {
+            color: var(--accent-secondary);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.25rem;
+        }
+
+        p, li {
+            color: #cbd5e1;
+            margin-bottom: 0.8rem;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 8px 8px 0;
         }
 
         code {
             background: #090d16;
             color: var(--accent-success);
-            padding: 0.2rem 0.4rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9em;
         }
 
         pre {
             background: #090d16;
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 8px;
             overflow-x: auto;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
             border: 1px solid var(--card-border);
         }
 
@@ -177,7 +206,7 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            height: 200px;
+            height: 220px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -205,6 +234,7 @@
             justify-content: center;
             padding: 1.5rem;
             border-radius: 12px;
+            box-sizing: border-box;
         }
 
         .flashcard-front {
@@ -219,13 +249,14 @@
             color: var(--text-main);
             transform: rotateY(180deg);
             font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .quiz-option {
             display: block;
             width: 100%;
             padding: 1rem;
-            margin: 0.5rem 0;
+            margin: 0.6rem 0;
             background: #0f1523;
             border: 1px solid var(--card-border);
             color: var(--text-main);
@@ -233,6 +264,7 @@
             text-align: left;
             cursor: pointer;
             transition: all 0.2s;
+            font-size: 0.95rem;
         }
 
         .quiz-option:hover {
@@ -252,14 +284,13 @@
             color: #f87171;
         }
 
-        /* AI Chat Assistant Widget */
         .chat-widget {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            height: 500px;
+            height: 520px;
         }
 
         .chat-messages {
@@ -338,7 +369,7 @@
             <p>Corso creato dalla developer Chiara Echraibi</p>
         </div>
         <div class="progress-container">
-            <span style="font-size:0.85rem; color: var(--text-muted);">Progresso Corso:</span>
+            <span style="font-size:0.85rem; color: var(--text-muted);">Avanzamento Corso:</span>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progressFill"></div>
             </div>
@@ -347,71 +378,180 @@
     </header>
 
     <nav class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('teoria')">📖 Teoria e Lezioni</button>
-        <button class="tab-btn" onclick="switchTab('flashcards')">🎴 Flashcards</button>
-        <button class="tab-btn" onclick="switchTab('quiz')">✍️ Quiz Pratico</button>
-        <button class="tab-btn" onclick="switchTab('chat')">🤖 Assistente IA</button>
+        <button class="tab-btn active" onclick="switchTab('teoria', this)">📖 Corso Teorico</button>
+        <button class="tab-btn" onclick="switchTab('flashcards', this)">🎴 Flashcards Studio</button>
+        <button class="tab-btn" onclick="switchTab('quiz', this)">✍️ Test di Verifica</button>
+        <button class="tab-btn" onclick="switchTab('chat', this)">🤖 Tutor IA Integrato</button>
     </nav>
 
     <main>
-        <!-- SEZIONE TEORIA -->
+        <!-- SEZIONE TEORIA COMPLETA -->
         <div id="teoria" class="tab-content active">
-            <div class="card">
-                <h2>Modulo 1: Fondamenti dell'Intelligenza Artificiale</h2>
-                <p>L'<strong>Intelligenza Artificiale (IA)</strong> è il ramo dell'informatica che sviluppa sistemi in grado di svolgere compiti che richiederebbero l'intelligenza umana (ragionamento, apprendimento, risoluzione di problemi).</p>
-                <br>
-                <h3>1.1 AI vs Machine Learning vs Deep Learning</h3>
-                <ul>
-                    <li><strong>AI (Intelligenza Artificiale):</strong> Il concetto macroscopico di macchine "intelligenti".</li>
-                    <li><strong>Machine Learning (ML):</strong> Sottoinsieme dell'IA in cui gli algoritmi imparano dai dati invece di essere programmati con regole fisse.</li>
-                    <li><strong>Deep Learning (DL):</strong> Sottoinsieme del ML basato su Reti Neurali Artificiali a più strati.</li>
-                </ul>
-                <br>
-                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1rem;">✅ Segna Modulo 1 come Completato</button>
-            </div>
-
-            <div class="card">
-                <h2>Modulo 2: Python per sviluppatori AI</h2>
-                <p>Python è il linguaggio standard per l'IA grazie alle sue librerie essenziali come <code>NumPy</code>, <code>Pandas</code>, e <code>PyTorch</code>.</p>
+            
+            <!-- MODULO 1 -->
+            <article class="card">
+                <h2>Modulo 1: Le Basi dell'Intelligenza Artificiale e del Machine Learning</h2>
                 
-                <pre><code># Esempio Python: La tua prima Rete Neurale Concettuale
-def neurone(input_dato, peso, bias):
-    attivazione = (input_dato * peso) + bias
-    return 1 if attivazione > 0 else 0
+                <h3>1.1 Cos'è davvero l'Intelligenza Artificiale?</h3>
+                <p>L'<strong>Intelligenza Artificiale (IA)</strong> è la disciplina dell'informatica che crea sistemi capaci di svolgere compiti complessi che richiederebbero facoltà cognitive umane: comprensione del linguaggio, riconoscimento visivo, pianificazione e risoluzione di problemi.</p>
+                
+                <div class="highlight-box">
+                    <strong>Il Cambio di Paradigma:</strong><br>
+                    • <strong>Programmazione Tradizionale:</strong> Dati + Regole (Codice scritto a mano) ➔ Risultati.<br>
+                    • <strong>Machine Learning (ML):</strong> Dati + Risultati Desiderati ➔ L'algoritmo impara le Regole da solo.
+                </div>
 
-print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
+                <h3>1.2 I Tre Pilastri del Machine Learning</h3>
+                <ul>
+                    <li><strong>Supervised Learning (Apprendimento Supervisionato):</strong> Il modello impara da dati "etichettati" (es. immagini contrassegnate come "Gatto" o "Cane"). Si divide in:
+                        <ul>
+                            <li><em>Classificazione:</em> Prevedere categorie discrete (Spam / Non Spam).</li>
+                            <li><em>Regressione:</em> Prevedere valori continui (Prezzo di una casa in base alla metratura).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Unsupervised Learning (Non Supervisionato):</strong> L'algoritmo analizza dati non etichettati per trovare pattern o gruppi nascosti (es. <em>Clustering</em> per segmentare i clienti di un e-commerce).</li>
+                    <li><strong>Reinforcement Learning (Apprendimento per Rinforzo):</strong> Un agente software impara interagendo con un ambiente, ricevendo <em>ricompense</em> per azioni corrette e <em>penalità</em> per errori (usato nei sistemi di guida autonoma o videogiochi).</li>
+                </ul>
+
+                <h3>1.3 Etica e Bias nei Dati</h3>
+                <p>Gli algoritmi di IA non sono intrinsecamente "neutrali": imparano dai dati storici. Se i dati contengono pregiudizi o disparità (i cosiddetti <strong>bias</strong>), il modello di Machine Learning tenderà a replicarli e amplificarli. Il ruolo dello sviluppatore AI include la pulizia e la valutazione etica del dataset.</p>
+
+                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1rem;">✅ Segna Modulo 1 come Completato</button>
+            </article>
+
+            <!-- MODULO 2 -->
+            <article class="card">
+                <h2>Modulo 2: Matematica essenziale e Python per l'IA</h2>
+
+                <h3>2.1 Perché Python?</h3>
+                <p>Python è diventato lo standard de facto dell'IA grazie alla sua sintassi pulita e ad un ricco ecosistema di librerie scientifiche.</p>
+
+                <h3>2.2 Le Librerie Fondamentali: NumPy e Pandas</h3>
+                <p><strong>NumPy:</strong> Fornisce la struttura dati <code>ndarray</code> per eseguire calcoli vettoriali rapidi ad altissima velocità.</p>
+                <p><strong>Pandas:</strong> Introduce il <code>DataFrame</code>, una struttura a tabella ideale per la pulizia, l'analisi e la trasformazione dei dati prima del training.</p>
+
+                <pre><code>import numpy as np
+import pandas as pd
+
+# Creazione di un array di input per un modello
+X = np.array([[1.0, 2.5], [3.0, 4.1], [5.2, 1.8]])
+
+# Definizione dei Pesi (Weights) e Bias
+weights = np.array([0.4, -0.6])
+bias = 0.1
+
+# Calcolo del prodotto scalare (Dot Product)
+previsione = np.dot(X, weights) + bias
+print("Output del calcolo matriciale:", previsione)</code></pre>
+
+                <h3>2.3 Le Basi Matematiche: Vettori, Matrici e Gradient Descent</h3>
+                <p>Ogni modello di ML converte le informazioni (immagini, testi, suoni) in <strong>vettori numerici</strong>. Il processo di apprendimento ottimizza questi numeri tramite il <strong>Gradient Descent (Discesa del Gradiente)</strong>, un algoritmo di calcolo infinitesimale che trova i valori ideali dei pesi riducendo gradualmente l'errore.</p>
 
                 <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1rem;">✅ Segna Modulo 2 come Completato</button>
-            </div>
+            </article>
 
-            <div class="card">
-                <h2>Modulo 3: Reti Neurali e Machine Learning</h2>
-                <p>Un modello di Machine Learning apprende regolando i suoi <strong>pesi (weights)</strong> e <strong>bias</strong> durante una fase chiamata <em>Addestramento (Training)</em>, riducendo l'errore calcolato da una <em>Loss Function</em>.</p>
+            <!-- MODULO 3 -->
+            <article class="card">
+                <h2>Modulo 3: Reti Neurali e Deep Learning Fondamentale</h2>
+
+                <h3>3.1 Anatomia del Perceptron (Il Neurone Artificiale)</h3>
+                <p>La rete neurale artificiale trae ispirazione dalla struttura biologica del cervello. L'unità fondamentale è il <strong>Perceptron</strong>:</p>
+                
+                <div class="highlight-box">
+                    <strong>Formula Matematica dell'Output:</strong><br>
+                    <code>y = Funzione_di_Attivazione( (Input_1 * W1 + Input_2 * W2 + ...) + Bias )</code>
+                </div>
+
+                <h3>3.2 Le Funzioni di Attivazione</h3>
+                <p>Introducono la non-linearità, consentendo alla rete di imparare concetti complessi:</p>
+                <ul>
+                    <li><strong>ReLU (Rectified Linear Unit):</strong> Trasforma tutti i valori negativi in 0. È la più utilizzata negli strati nascosti.</li>
+                    <li><strong>Sigmoid:</strong> Comprime i valori tra 0 e 1 (ideale per la classificazione binaria).</li>
+                    <li><strong>Softmax:</strong> Trasforma i valori in un insieme di probabilità la cui somma è 1 (classificazione multi-classe).</li>
+                </ul>
+
+                <h3>3.3 Il Ciclo di Addestramento (Training Loop)</h3>
+                <ol>
+                    <li><strong>Forward Propagation:</strong> I dati attraversano la rete dall'input all'output generato.</li>
+                    <li><strong>Calcolo della Loss Function (Funzione di Perdita):</strong> Calcola la differenza precisa tra l'output predetto dal modello e il dato reale.</li>
+                    <li><strong>Backpropagation:</strong> L'errore viene propagato all'indietro usando la regola della catena del calcolo differenziale.</li>
+                    <li><strong>Aggiornamento Pesi:</strong> Gli ottimizzatori (es. <em>Adam</em>, <em>SGD</em>) modificano i pesi per migliorare la risposta al ciclo successivo.</li>
+                </ol>
+
                 <button class="tab-btn" onclick="markCompleted(75)" style="margin-top: 1rem;">✅ Segna Modulo 3 come Completato</button>
-            </div>
+            </article>
+
+            <!-- MODULO 4 -->
+            <article class="card">
+                <h2>Modulo 4: Progetti Pratici e Framework di Produzione</h2>
+
+                <h3>4.1 I Framework di riferimento: PyTorch e TensorFlow</h3>
+                <p>Per costruire modelli complessi senza riscrivere le equazioni matematiche da zero, gli AI Developer utilizzano framework ad alte prestazioni come <strong>PyTorch</strong> (sviluppato da Meta) e <strong>TensorFlow / Keras</strong> (sviluppato da Google).</p>
+
+                <h3>4.2 Esempio Pratico in PyTorch: Una Rete Neurale Completa</h3>
+                <pre><code>import torch
+import torch.nn as nn
+
+# Definizione della struttura dell'architettura neurale
+class AlgoGenesisModel(nn.Module):
+    def __init__(self):
+        super(AlgoGenesisModel, self).__init__()
+        self.strato_ingresso = nn.Linear(in_features=10, out_features=64)
+        self.relu = nn.ReLU()
+        self.strato_uscita = nn.Linear(in_features=64, out_features=1)
+        
+    def forward(self, x):
+        x = self.strato_ingresso(x)
+        x = self.relu(x)
+        x = self.strato_uscita(x)
+        return x
+
+# Istanza del modello
+modello = AlgoGenesisModel()
+print("Architettura della Rete Neurale AlgoGenesis:")
+print(modello)</code></pre>
+
+                <h3>4.3 Overfitting e Deployment</h3>
+                <p>Uno dei problemi principali del Machine Learning è l'<strong>Overfitting</strong> (quando il modello impara a memoria i dati di addestramento ma fallisce sui dati nuovi). Si previene usando tecniche di <em>Dropout</em>, <em>Regularization</em> e dividendo il dataset in set di <strong>Training</strong> e <strong>Validation</strong>.</p>
+                <p>Una volta addestrato e validato, il modello viene distribuito (<em>deployment</em>) tramite API web per essere integrato all'interno di applicazioni interattive o app aziendali.</p>
+
+                <button class="tab-btn" onclick="markCompleted(100)" style="margin-top: 1rem;">✅ Segna Modulo 4 come Completato</button>
+            </article>
         </div>
 
         <!-- SEZIONE FLASHCARDS -->
         <div id="flashcards" class="tab-content">
-            <div class="flashcard-grid">
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">Cos'è il Machine Learning?</div>
-                        <div class="flashcard-back">È una branca dell'IA in cui i computer imparano a riconoscere pattern e prendere decisioni analizzando grandi quantità di dati, senza istruzioni esplicite.</div>
+            <div class="card">
+                <h2>Flashcards di Ripasso Rapido</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Tocca una carta per girarla e verificare la spiegazione teorica.</p>
+                
+                <div class="flashcard-grid">
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">Supervised vs Unsupervised Learning</div>
+                            <div class="flashcard-back">Il Supervised usa dati etichettati (input + risposta corretta). L'Unsupervised lavora su dati grezzi per scoprire pattern o raggruppamenti automatici.</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">A cosa serve la Loss Function?</div>
-                        <div class="flashcard-back">Misura la distanza (l'errore) tra la previsione fatta dal modello IA e il valore reale desiderato.</div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">Cos'è il Gradient Descent?</div>
+                            <div class="flashcard-back">È l'algoritmo di ottimizzazione matematica che calcola la direzione in cui modificare i pesi per ridurre al minimo l'errore (Loss).</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flashcard" onclick="this.classList.toggle('flipped')">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">Qual è la funzione del Bias?</div>
-                        <div class="flashcard-back">È un valore aggiunto al calcolo del neurone per consentire al modello di adattarsi meglio e spostare l'attivazione a destra o sinistra.</div>
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">Ruolo del Dropout</div>
+                            <div class="flashcard-back">Disattiva casualmente una percentuale di neuroni durante l'addestramento per evitare l'overfitting e rendere il modello più robusto.</div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">A cosa serve la ReLU?</div>
+                            <div class="flashcard-back">La ReLU è una funzione di attivazione che azzera i valori negativi. Aggiunge non-linearità con una grande efficienza computazionale.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -420,14 +560,25 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
         <!-- SEZIONE QUIZ -->
         <div id="quiz" class="tab-content">
             <div class="card">
-                <h2>Verifica le tue Conoscenze</h2>
-                <p style="margin-bottom: 1.5rem;">Domanda 1: Quale sottocampo dell'IA sfrutta le Reti Neurali Artificiali multilivello?</p>
+                <h2>Test di Verifica Conoscenze</h2>
                 
-                <button class="quiz-option" onclick="checkQuiz(this, false)">A) Programmazione orientata agli oggetti</button>
-                <button class="quiz-option" onclick="checkQuiz(this, true)">B) Deep Learning</button>
-                <button class="quiz-option" onclick="checkQuiz(this, false)">C) Database Relazionali</button>
-                
-                <div id="quizFeedback" style="margin-top: 1rem; font-weight: bold;"></div>
+                <div style="margin-bottom: 2rem;">
+                    <p style="font-weight: bold; color: var(--accent-primary);">Domanda 1: Quale libreria Python è fondamentale per manipolare dati in formato Tabellare/DataFrame?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">A) PyTorch</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q1')">B) Pandas</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">C) Matplotlib</button>
+                    <div id="q1Feedback" style="margin-top: 0.5rem; font-weight: bold;"></div>
+                </div>
+
+                <hr style="border-color: var(--card-border); margin: 1.5rem 0;">
+
+                <div>
+                    <p style="font-weight: bold; color: var(--accent-primary);">Domanda 2: Cosa si intende con "Backpropagation" in una Rete Neurale?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q2')">A) Il calcolo e la propagazione dell'errore all'indietro per aggiornare i pesi</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">B) L'annullamento della memoria nei dati di input</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">C) La conversione automatica di un testo in audio</button>
+                    <div id="q2Feedback" style="margin-top: 0.5rem; font-weight: bold;"></div>
+                </div>
             </div>
         </div>
 
@@ -435,14 +586,14 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
         <div id="chat" class="tab-content">
             <div class="card">
                 <h2>Tutor Virtuale AlgoGenesis</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Hai dubbi sulla teoria o su Python? Chiedi al tutor interattivo del corso!</p>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Inserisci i tuoi dubbi teorici su Python, sulle reti neurali o sul Machine Learning.</p>
                 
                 <div class="chat-widget">
                     <div class="chat-messages" id="chatMessages">
-                        <div class="message bot">Ciao Chiara! Sono il tutor virtuale del tuo corso AlgoGenesis. Come posso aiutarti con la lezione di oggi?</div>
+                        <div class="message bot">Ciao Chiara! Sono il tuo tutor dedicato per il corso AlgoGenesis. Quale argomento o concetto dei 4 moduli vorresti approfondire insieme oggi?</div>
                     </div>
                     <div class="chat-input-area">
-                        <input type="text" id="userInput" placeholder="Scrivi una domanda sull'IA..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <input type="text" id="userInput" placeholder="Es. Spiegami cos'è il Gradient Descent..." onkeypress="if(event.key==='Enter') sendMessage()">
                         <button onclick="sendMessage()">Invia</button>
                     </div>
                 </div>
@@ -451,18 +602,18 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
     </main>
 
     <footer>
-        <p>&copy; 2026 AlgoGenesis — Progetto sviluppato da Chiara Echraibi. Tutti i diritti riservati.</p>
+        <p>&copy; 2026 AlgoGenesis — Corso sviluppato dalla developer Chiara Echraibi. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
         let currentProgress = 0;
 
-        function switchTab(tabId) {
+        function switchTab(tabId, btnElement) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             
             document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            btnElement.classList.add('active');
         }
 
         function markCompleted(amount) {
@@ -473,20 +624,20 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
             }
         }
 
-        function checkQuiz(button, isCorrect) {
-            const feedback = document.getElementById('quizFeedback');
-            const options = document.querySelectorAll('.quiz-option');
+        function checkQuiz(button, isCorrect, qId) {
+            const feedback = document.getElementById(qId + 'Feedback');
+            const parent = button.parentElement;
+            const options = parent.querySelectorAll('.quiz-option');
             
-            options.forEach(opt => opt.disabled = true);
+            options.forEach(opt => opt.style.pointerEvents = 'none');
 
             if (isCorrect) {
                 button.classList.add('correct');
-                feedback.innerText = "✨ Corretto! Il Deep Learning si basa proprio sulle reti neurali complesse.";
+                feedback.innerText = "✨ Risposta Esatta! Complimenti per la preparazione.";
                 feedback.style.color = "var(--accent-success)";
-                markCompleted(100);
             } else {
                 button.classList.add('incorrect');
-                feedback.innerText = "❌ Risposta errata. Riprova rileggendo il Modulo 1!";
+                feedback.innerText = "❌ Risposta non corretta. Controlla il modulo di riferimento nella sezione Teoria!";
                 feedback.style.color = "#f87171";
             }
         }
@@ -498,7 +649,6 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
 
             const chatMessages = document.getElementById('chatMessages');
 
-            // Messaggio Utente
             const userMsg = document.createElement('div');
             userMsg.className = 'message user';
             userMsg.innerText = text;
@@ -506,23 +656,24 @@ print("Output del neurone:", neurone(0.8, 1.5, -0.5))</code></pre>
 
             input.value = '';
 
-            // Risposta automatica Bot
             setTimeout(() => {
                 const botMsg = document.createElement('div');
                 botMsg.className = 'message bot';
                 
                 const lower = text.toLowerCase();
-                if (lower.includes('python')) {
-                    botMsg.innerText = "Python è fantastico! Nell'IA lo usiamo con librerie come PyTorch o TensorFlow per definire le strutture dei modelli.";
-                } else if (lower.includes('bias') || lower.includes('peso')) {
-                    botMsg.innerText = "I pesi e i bias sono i parametri che la rete neurale modifica durante l'addestramento per ridurre l'errore!";
+                if (lower.includes('python') || lower.includes('pandas') || lower.includes('numpy')) {
+                    botMsg.innerText = "In Python, NumPy e Pandas sono la colonna portante: NumPy gestisce array e operazioni matematiche veloci, mentre Pandas organizza i dati in DataFrame pronte per il preprocessing!";
+                } else if (lower.includes('gradient') || lower.includes('gradiente') || lower.includes('loss')) {
+                    botMsg.innerText = "Il Gradient Descent rileva la pendenza della curva di errore (Loss) e muove i pesi del neurone verso la direzione che minimizza lo sbaglio!";
+                } else if (lower.includes('pytorch') || lower.includes('tensorflow')) {
+                    botMsg.innerText = "PyTorch e TensorFlow ti permettono di definire il flusso dei tensor, applicare l'auto-differenziazione e sfruttare le GPU per accelerare l'addestramento!";
                 } else {
-                    botMsg.innerText = "Ottima domanda! Nel corso AlgoGenesis impareremo ad approfondire tutti questi aspetti passo dopo passo.";
+                    botMsg.innerText = "Ottimo quesito! Ricorda che ogni modello parte dall'analisi dei dati per arrivare al calcolo delle probabilità via funzioni di attivazione.";
                 }
 
                 chatMessages.appendChild(botMsg);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 600);
+            }, 500);
         }
     </script>
 </body>
