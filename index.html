@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elements of AI | App Interattiva - Chiara Echraibi</title>
+    <title>AlgoGenesis & Elements of AI | Corso Professionale - Chiara Echraibi</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151c2c;
-            --card-border: #232f48;
+            --bg-color: #070913;
+            --card-bg: #0f172a;
+            --card-border: #1e293b;
             --accent-primary: #38bdf8;
             --accent-secondary: #818cf8;
             --accent-success: #34d399;
-            --text-main: #f1f5f9;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
         }
@@ -27,14 +27,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.8;
+            line-height: 1.85;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background: rgba(21, 28, 44, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
             position: sticky;
@@ -66,7 +66,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.5);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             border: 1px solid var(--card-border);
@@ -92,7 +92,7 @@
             justify-content: center;
             gap: 0.8rem;
             padding: 1rem;
-            background: #0f1523;
+            background: #0b1120;
             border-bottom: 1px solid var(--card-border);
             overflow-x: auto;
         }
@@ -117,9 +117,9 @@
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
             flex-grow: 1;
             width: 100%;
         }
@@ -136,64 +136,88 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
         .card h2 {
             color: var(--accent-primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
             border-bottom: 1px solid var(--card-border);
-            padding-bottom: 0.8rem;
+            padding-bottom: 1rem;
         }
 
         .card h3 {
             color: var(--accent-secondary);
-            margin: 1.8rem 0 0.8rem 0;
-            font-size: 1.3rem;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .card h4 {
+            color: var(--text-main);
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.15rem;
         }
 
         p, li {
             color: #cbd5e1;
-            margin-bottom: 1rem;
-            font-size: 1.02rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
         }
 
         ul, ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1.2rem;
+            padding-left: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .highlight-box {
-            background: rgba(56, 189, 248, 0.08);
+            background: rgba(56, 189, 248, 0.06);
             border-left: 4px solid var(--accent-primary);
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0;
             border-radius: 0 8px 8px 0;
         }
 
         code {
-            background: #090d16;
+            background: #060913;
             color: var(--accent-success);
-            padding: 0.2rem 0.5rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.9em;
         }
 
+        pre {
+            background: #060913;
+            padding: 1.8rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border: 1px solid var(--card-border);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #38bdf8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .flashcard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
         }
 
         .flashcard {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            height: 250px;
+            height: 270px;
             perspective: 1000px;
             cursor: pointer;
         }
@@ -219,7 +243,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 1.8rem;
             border-radius: 12px;
             box-sizing: border-box;
         }
@@ -227,15 +251,15 @@
         .flashcard-front {
             background: var(--card-bg);
             color: var(--accent-primary);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
         .flashcard-back {
-            background: #1c263b;
+            background: #1e293b;
             color: var(--text-main);
             transform: rotateY(180deg);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             line-height: 1.6;
             text-align: left;
         }
@@ -243,31 +267,31 @@
         .quiz-option {
             display: block;
             width: 100%;
-            padding: 1.1rem;
-            margin: 0.8rem 0;
-            background: #0f1523;
+            padding: 1.2rem;
+            margin: 0.9rem 0;
+            background: #0b1120;
             border: 1px solid var(--card-border);
             color: var(--text-main);
             border-radius: 8px;
             text-align: left;
             cursor: pointer;
             transition: all 0.2s;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         .quiz-option:hover {
             border-color: var(--accent-primary);
-            background: #182238;
+            background: #172033;
         }
 
         .quiz-option.correct {
-            background: rgba(52, 211, 153, 0.2);
+            background: rgba(52, 211, 153, 0.25);
             border-color: var(--accent-success);
             color: var(--accent-success);
         }
 
         .quiz-option.incorrect {
-            background: rgba(248, 113, 113, 0.2);
+            background: rgba(248, 113, 113, 0.25);
             border-color: #f87171;
             color: #f87171;
         }
@@ -278,28 +302,28 @@
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            height: 550px;
+            height: 600px;
         }
 
         .chat-messages {
             flex-grow: 1;
-            padding: 1.2rem;
+            padding: 1.5rem;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .message {
             max-width: 85%;
-            padding: 1rem 1.2rem;
+            padding: 1.1rem 1.4rem;
             border-radius: 12px;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .message.bot {
-            background: #1c263b;
+            background: #1e293b;
             color: var(--text-main);
             align-self: flex-start;
             border-bottom-left-radius: 2px;
@@ -307,7 +331,7 @@
 
         .message.user {
             background: var(--accent-primary);
-            color: #0b0f19;
+            color: #070913;
             align-self: flex-end;
             font-weight: 600;
             border-bottom-right-radius: 2px;
@@ -315,39 +339,40 @@
 
         .chat-input-area {
             display: flex;
-            padding: 1rem;
+            padding: 1.2rem;
             border-top: 1px solid var(--card-border);
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
 
         .chat-input-area input {
             flex-grow: 1;
-            background: #090d16;
+            background: #060913;
             border: 1px solid var(--card-border);
-            padding: 0.9rem 1rem;
+            padding: 1rem 1.2rem;
             border-radius: 8px;
             color: var(--text-main);
             outline: none;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         .chat-input-area button {
             background: var(--gradient);
             border: none;
-            padding: 0.9rem 1.6rem;
+            padding: 1rem 1.8rem;
             border-radius: 8px;
-            color: #0b0f19;
+            color: #070913;
             font-weight: bold;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             color: var(--text-muted);
             border-top: 1px solid var(--card-border);
-            font-size: 0.9rem;
-            background: #080b12;
+            font-size: 0.95rem;
+            background: #05070f;
         }
     </style>
 </head>
@@ -355,11 +380,11 @@
 
     <header>
         <div class="logo">
-            <h1>Elements of AI 🤖</h1>
-            <p>App curata e sviluppata da Chiara Echraibi</p>
+            <h1>AlgoGenesis 🚀</h1>
+            <p>Corso professionale unificato ideato da Chiara Echraibi</p>
         </div>
         <div class="progress-container">
-            <span style="font-size:0.85rem; color: var(--text-muted);">Avanzamento:</span>
+            <span style="font-size:0.85rem; color: var(--text-muted);">Completamento:</span>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progressFill"></div>
             </div>
@@ -368,204 +393,208 @@
     </header>
 
     <nav class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('teoria', this)">📚 Capitoli e Riassunti</button>
+        <button class="tab-btn active" onclick="switchTab('teoria', this)">📚 Teoria Integrale</button>
+        <button class="tab-btn" onclick="switchTab('python', this)">💻 Python & ML Lab</button>
         <button class="tab-btn" onclick="switchTab('flashcards', this)">🎴 Flashcards</button>
-        <button class="tab-btn" onclick="switchTab('quiz', this)">✍️ Quiz Interattivi</button>
-        <button class="tab-btn" onclick="switchTab('chat', this)">🤖 Tutor Elements of AI</button>
+        <button class="tab-btn" onclick="switchTab('quiz', this)">✍️ Test Ufficiali</button>
+        <button class="tab-btn" onclick="switchTab('chat', this)">🤖 Tutor AI</button>
     </nav>
 
     <main>
-        <!-- RIASSUNTI DETTAGLIATI CAPITOLO PER CAPITOLO -->
+        <!-- SEZIONE 1: TEORIA INTEGRALE ELEMENTS OF AI -->
         <div id="teoria" class="tab-content active">
             
-            <!-- CAPITOLO 1 -->
             <article class="card">
-                <h2>Capitolo 1: Che cos'è l'Intelligenza Artificiale?</h2>
+                <h2>Sezione A: I Fondamenti Concettuali (Elements of AI - Capitoli 1 & 2)</h2>
                 
-                <h3>1.1 Definire l'IA</h3>
-                <p>Non esiste una singola definizione universale di Intelligenza Artificiale. Nel corso <em>Elements of AI</em>, l'IA viene definita attraverso due proprietà fondamentali che distinguono i sistemi intelligenti dai programmi tradizionali:</p>
-                <ul>
-                    <li><strong>Autonomia:</strong> La capacità di svolgere compiti complessi in ambienti variabili senza il costante intervento umano diretto.</li>
-                    <li><strong>Adattabilità:</strong> La capacità di migliorare le proprie prestazioni imparando dall'esperienza e dall'analisi dei dati.</li>
-                </ul>
-
+                <h3>1. Che cos'è l'Intelligenza Artificiale?</h3>
+                <p>La definizione di intelligenza artificiale non può essere disgiunta dal contesto dei sistemi autonomi e adattivi. Un sistema informatico si definisce intelligente quando non si limita ad eseguire in modo deterministico una sequenza di istruzioni rigide scritte dal programmatore, ma è in grado di percepire l'ambiente circostante, elaborare le informazioni e agire autonomamente per raggiungere un obiettivo prefissato.</p>
+                <p>Storicamente, il campo ha dovuto affrontare la sfida di definire cosa significhi "pensare". Il celebre <strong>Test di Turing</strong> (1950) sposta l'attenzione dalla capacità intrinseca di pensare alla capacità di esibire un comportamento indistinguibile da quello umano in un contesto conversazionale.</p>
+                
                 <div class="highlight-box">
-                    <strong>Il Test di Turing:</strong> Proposto da Alan Turing nel 1950, è un esperimento mentale per verificare se una macchina sia in grado di mostrare un comportamento intelligente indistinguibile da quello umano in una conversazione testuale.
+                    <strong>Distinzione Critica: Narrow AI vs AGI</strong><br>
+                    • <strong>Narrow AI (IA Debole):</strong> Sistemi altamente specializzati in un unico dominio specifico (es. traduzione automatica, diagnosi medica per immagini, guida autonoma limitata). Tutta l'IA esistente oggi rientra in questa categoria.<br>
+                    • <strong>AGI (Artificial General Intelligence / IA Forte):</strong> Un'ipotetica intelligenza artificiale di livello generale, capace di eguagliare o superare l'essere umano in qualsiasi compito cognitivo e di trasferire l'apprendimento da un dominio all'altro. Ad oggi rimane un obiettivo di ricerca teorica.
                 </div>
 
-                <h3>1.2 IA Stretta (Narrow AI) vs IA Generale (AGI)</h3>
-                <p>È fondamentale distingue tra due concetti spesso confusi:</p>
+                <h3>2. Risoluzione dei Problemi e Spazio degli Stati</h3>
+                <p>Molti problemi complessi nell'informatica e nell'IA vengono affrontati formalizzandoli come problemi di ricerca all'interno di uno <strong>Spazio degli Stati (State Space)</strong>. Uno spazio degli stati comprende:</p>
                 <ul>
-                    <li><strong>Narrow AI (IA Debole/Stretta):</strong> Sistemi progettati ed eccellenti in un singolo compito specifico (es. giocare a scacchi, trascrivere l'audio o riconoscere tumori da radiografie). Tutta l'IA attuale appartiene a questa categoria.</li>
-                    <li><strong>General AI (AGI - IA Forte):</strong> Un'ipotetica intelligenza di livello umano capace di apprendere e svolgere qualsiasi compito intellettuale. Ad oggi non esiste ancora ed è oggetto di ricerca teorica.</li>
+                    <li><strong>Lo Stato Iniziale:</strong> La situazione di partenza da cui si origina il problema.</li>
+                    <li><strong>Le Azioni e le Transizioni:</strong> Le regole operative che permettono di passare da uno stato a un altro modificando la situazione corrente.</li>
+                    <li><strong>Lo Stato Obiettivo (Goal State):</strong> La condizione o configurazione finale che rappresenta la soluzione del problema.</li>
                 </ul>
+                <p>Per esplorare l'albero delle decisioni generate dallo spazio degli stati si utilizzano algoritmi di ricerca strutturati come la <em>Ricerca in Ampiezza (BFS)</em> e la <em>Ricerca in Profondità (DFS)</em>, che permettono all'agente di valutare percorsi alternativi in base a costi, vincoli euristiche.</p>
 
-                <button class="tab-btn" onclick="markCompleted(16)" style="margin-top: 1.5rem;">✅ Completa Capitolo 1</button>
+                <button class="tab-btn" onclick="markCompleted(25)" style="margin-top: 1.5rem;">✅ Completa Sezione Fondamenti</button>
             </article>
 
-            <!-- CAPITOLO 2 -->
             <article class="card">
-                <h2>Capitolo 2: Risoluzione dei Problemi con l'IA</h2>
+                <h2>Sezione B: Incertezza e Machine Learning (Elements of AI - Capitoli 3 & 4)</h2>
 
-                <h3>2.1 Spazio degli Stati e Alberi di Ricerca</h3>
-                <p>Molti problemi di IA (come la navigazione di un navigatore GPS o i giochi come scacchi e filetto) vengono modellati come **problemi di ricerca** all'interno di uno <em>spazio degli stati</em>:</p>
-                <ul>
-                    <li><strong>Stato Iniziale:</strong> Il punto di partenza (es. la tua posizione attuale sulla mappa).</li>
-                    <li><strong>Azioni e Transizioni:</strong> Le mosse o strade possibili che ti portano da uno stato all'altro.</li>
-                    <li><strong>Stato Obiettivo (Goal State):</strong> La destinazione finale desiderata.</li>
-                </ul>
-
-                <h3>2.2 Algoritmi di Ricerca: Depth-First vs Breadth-First</h3>
-                <p>Per esplorare l'albero delle decisioni si utilizzano strategie differenti:</p>
-                <ul>
-                    <li><strong>Ricerca in Ampiezza (Breadth-First Search - BFS):</strong> Esplora prima tutti i nodi allo stesso livello di profondità. Garantisce di trovare il percorso più breve se i costi delle mosse sono uguali.</li>
-                    <li><strong>Ricerca in Profondità (Depth-First Search - DFS):</strong> Segue un singolo percorso fino al fondo prima di tornare indietro (backtracking). Richiede meno memoria ma rischia di perdersi in percorsi infiniti.</li>
-                </ul>
-
-                <button class="tab-btn" onclick="markCompleted(33)" style="margin-top: 1.5rem;">✅ Completa Capitolo 2</button>
-            </article>
-
-            <!-- CAPITOLO 3 -->
-            <article class="card">
-                <h2>Capitolo 3: L'IA nel Mondo Reale e la Probabilità</h2>
-
-                <h3>3.1 Gestire l'Incertezza</h3>
-                <p>Nel mondo reale le informazioni sono spesso incomplete o imprecise. L'IA gestisce l'incertezza utilizzando la **teoria della probabilità** invece della logica rigida (Vero/Falso).</p>
-
-                <h3>3.2 La Regola di Bayes (Bayesian Reasoning)</h3>
-                <p>La regola di Bayes permette di aggiornare la probabilità di un'ipotesi ($H$) sulla base di nuove evidenze ($E$):</p>
-
+                <h3>3. Ragionamento Probabilistico e Regola di Bayes</h3>
+                <p>Nel mondo reale le informazioni non sono quasi mai certe o binarie (Vero/Falso). L'intelligenza artificiale deve prendere decisioni in condizioni di incertezza parziale o rumorosa. A tal fine, sfrutta la teoria della probabilità e, in particolare, il <strong>Teorema di Bayes</strong>.</p>
+                <p>La Regola di Bayes consente di calcolare la probabilità condizionata di un'ipotesi ($H$) alla luce di una nuova evidenza osservata ($E$):</p>
+                
                 <div class="highlight-box">
-                    <strong>Formula Concettuale di Bayes:</strong><br>
-                    <code>P(Ipotesi | Evidenza) = [ P(Evidenza | Ipotesi) * P(Ipotesi) ] / P(Evidenza)</code>
+                    <code>P(H | E) = [ P(E | H) * P(H) ] / P(E)</code><br><br>
+                    Dove <code>P(H)</code> è la probabilità a priori dell'ipotesi, <code>P(E | H)</code> è la verosimiglianza dell'evidenza data l'ipotesi, e <code>P(E)</code> è la probabilità marginale dell'evidenza complessiva. Questo meccanismo è alla base dei sistemi di diagnosi medica probabilistica e dei filtri antispam intelligenti.
                 </div>
 
-                <p>Un esempio classico è il **Filtro Spam**: se un'email contiene la parola "Offerta speciale" (Evidenza), il filtro usa la Regola di Bayes per calcolare quanto sia probabile che l'email sia effettivamente Spam (Ipotesi), aggiornando la stima iniziale.</p>
+                <h3>4. Machine Learning e Metodo k-NN</h3>
+                <p>Il passaggio dalla programmazione classica al Machine Learning sposta il carico di lavoro dalla scrittura manuale delle regole all'analisi statistica dei dati. Tra i modelli concettuali fondamentali introdotti in questa fase vi è l'algoritmo <strong>k-Nearest Neighbors (k-NN)</strong>, un metodo basato sulle distanze geometriche nello spazio delle caratteristiche per classificare un nuovo elemento ignoto in base ai suoi $k$ vicini più prossimi.</p>
 
-                <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1.5rem;">✅ Completa Capitolo 3</button>
+                <button class="tab-btn" onclick="markCompleted(50)" style="margin-top: 1.5rem;">✅ Completa Sezione Probabilità e ML</button>
             </article>
 
-            <!-- CAPITOLO 4 -->
             <article class="card">
-                <h2>Capitolo 4: Machine Learning (Apprendimento Automatico)</h2>
+                <h2>Sezione C: Reti Neurali, Etica e Futuro (Elements of AI - Capitoli 5 & 6)</h2>
 
-                <h3>4.1 Perché impara dai dati?</h3>
-                <p>Invece di scrivere regole a mano, lasciamo che sia l'algoritmo di Machine Learning a individuare pattern statistici analizzando grandi moli di dati storici.</p>
+                <h3>5. Reti Neurali e Visione Artificiale</h3>
+                <p>Le reti neurali traggono ispirazione dall'architettura biologica dei neuroni interconnessi. Ciascun nodo riceve segnali di input, li moltiplica per un <strong>peso sinaptico</strong> e somma il risultato a un bias. L'architettura profonda (Deep Learning) consente di estrarre gerarchie di caratteristiche complesse: dai pixel grezzi di un'immagine fino al riconoscimento di forme geometriche e volti umani.</p>
 
-                <h3>4.2 Tipi di Machine Learning</h3>
-                <ul>
-                    <li><strong>Apprendimento Supervisionato:</strong> Il modello impara da esempi che contengono la risposta corretta (Regressione per predire numeri continui; Classificazione per categorie).</li>
-                    <li><strong>Apprendimento Non Supervisionato:</strong> Trova strutture spontanee nei dati senza etichette (es. *Clustering* con algoritmi come k-means).</li>
-                </ul>
+                <h3>6. Implicazioni Sociali, Bias e Responsabilità</h3>
+                <p>L'ultimo pilastro fondamentale riguarda l'etica dell'IA. I modelli apprendono dai dati storici prodotti dalla società umana; di conseguenza, se i dati contengono pregiudizi o discriminazioni sistemiche (gender bias, disparità razziali), l'algoritmo non farà altro che interiorizzarli e riprodurli su vasta scala in modo automatizzato. La trasparenza, l'audit dei dataset e la supervisione umana restano baluardi imprescindibili per uno sviluppatore AI responsabile.</p>
 
-                <h3>4.3 Algoritmo Nearest Neighbor (k-NN)</h3>
-                <p>Il metodo del **Vicino più Prossimo (k-Nearest Neighbors)** assegna a un nuovo elemento sconosciuto la categoria dei $k$ elementi più vicini ad esso nello spazio delle caratteristiche. È un concetto intuitivo ma potentissimo per raccomandazioni e classificazioni.</p>
-
-                <button class="tab-btn" onclick="markCompleted(66)" style="margin-top: 1.5rem;">✅ Completa Capitolo 4</button>
-            </article>
-
-            <!-- CAPITOLO 5 -->
-            <article class="card">
-                <h2>Capitolo 5: Reti Neurali e Deep Learning</h2>
-
-                <h3>5.1 Concetto di Rete Neurale</h3>
-                <p>Inspirate alla struttura biologica del cervello, le **Reti Neurali Artificiali** sono composte da strati di nodi interconnessi (neuroni artificiali). Ciascuna connessione ha un **peso ($w$)** che amplifica o attenua il segnale in entrata.</p>
-
-                <h3>5.2 Come le Reti Neurali Vedono le Immagini</h3>
-                <p>Un'immagine digitale per la rete non è altro che una matrice di numeri (i valori dei pixel da 0 a 255). Gli strati iniziali imparano a riconoscere tratti semplici (come bordi e linee), mentre gli strati più profondi combinano questi elementi per riconoscere forme complesse come occhi, volti o automobili.</p>
-
-                <button class="tab-btn" onclick="markCompleted(83)" style="margin-top: 1.5rem;">✅ Completa Capitolo 5</button>
-            </article>
-
-            <!-- CAPITOLO 6 -->
-            <article class="card">
-                <h2>Capitolo 6: Implicazioni, Etica e Futuro dell'IA</h2>
-
-                <h3>6.1 Bias e Responsabilità Algoritmica</h3>
-                <p>Poiché i modelli imparano dai dati generati dall'uomo, possono assorbire e amplificare i pregiudizi sistemici umani (gender bias, discriminazioni razziali o socio-economiche). È dovere etico chi costruisce sistemi IA garantire la trasparenza e la pulizia dei dati.</p>
-
-                <h3>6.2 Impatto sul Lavoro e sulla Società</h3>
-                <p>L'IA non sostituirà semplicemente l'uomo, ma trasformerà le professioni automatizzando i compiti ripetitivi e affiancando i lavoratori nei processi decisionali complessi. L'apprendimento continuo (Life-long learning) diventa quindi fondamentale.</p>
-
-                <button class="tab-btn" onclick="markCompleted(100)" style="margin-top: 1.5rem;">✅ Completa Capitolo 6</button>
+                <button class="tab-btn" onclick="markCompleted(75)" style="margin-top: 1.5rem;">✅ Completa Sezione Reti ed Etica</button>
             </article>
         </div>
 
-        <!-- FLASHCARDS -->
+        <!-- SEZIONE 2: PYTHON & MACHINE LEARNING LAB -->
+        <div id="python" class="tab-content">
+            <article class="card">
+                <h2>Laboratorio Pratico: Python, NumPy, Pandas e PyTorch per AI Developer</h2>
+                
+                <p>Ora che padroneggiamo i concetti teorici avanzati, passiamo all'implementazione ingegneristica con Python. Per sviluppare IA a livello professionale non basta conoscere la teoria: bisogna saper maneggiare strutture dati ad alte prestazioni e framework di Deep Learning.</p>
+
+                <h3>1. Manipolazione dati con NumPy e Pandas</h3>
+                <p><strong>NumPy</strong> gestisce array multidimensionali ( tensori di base ) per il calcolo vettoriale rapido, mentre <strong>Pandas</strong> fornisce i <code>DataFrame</code> per la pulizia tabellare.</p>
+
+                <pre><code>import numpy as np
+import pandas as pd
+
+# Creazione di un dataset tabellare simulato con Pandas
+dati_clienti = {
+    'OreStudio': [2.5, 5.0, 1.2, 8.5, 6.0],
+    'OreSonno': [7.0, 6.5, 8.0, 5.0, 6.0],
+    'SuperatoEsame': [0, 1, 0, 1, 1]
+}
+df = pd.DataFrame(dati_clienti)
+
+# Estrazione delle features (X) e del target (y) tramite NumPy
+X = df[['OreStudio', 'OreSonno']].values
+y = df['SuperatoEsame'].values
+
+print("Matrice Features X:")
+print(X)</code></pre>
+
+                <h3>2. Costruzione di una Rete Neurale in PyTorch</h3>
+                <p>Il framework standard industriale per la ricerca e lo sviluppo di modelli di Deep Learning è <strong>PyTorch</strong>. Vediamo come si struttura una classe neurale completa:</p>
+
+                <pre><code>import torch
+import torch.nn as nn
+import torch.optim as optim
+
+class ReteAlgoGenesis(nn.Module):
+    def __init__(self, input_dim):
+        super(ReteAlgoGenesis, self).__init__()
+        # Primo strato nascosto con attivazione ReLU
+        self.layer_hidden = nn.Linear(input_dim, 16)
+        self.relu = nn.ReLU()
+        # Strato di output con attivazione Sigmoid per classificazione binaria
+        self.layer_output = nn.Linear(16, 1)
+        self.sigmoid = nn.Sigmoid()
+        
+    def forward(self, x):
+        out = self.layer_hidden(x)
+        out = self.relu(out)
+        out = self.layer_output(out)
+        return self.sigmoid(out)
+
+# Inizializzazione del modello con 2 feature in ingresso
+modello = ReteAlgoGenesis(input_dim=2)
+print("Modello PyTorch compilato correttamente:")
+print(modello)</code></pre>
+
+                <button class="tab-btn" onclick="markCompleted(100)" style="margin-top: 1.5rem;">✅ Completa Laboratorio Python</button>
+            </article>
+        </div>
+
+        <!-- SEZIONE 3: FLASHCARDS -->
         <div id="flashcards" class="tab-content">
             <div class="card">
-                <h2>Flashcards di Ripasso: Elements of AI</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Tocca ciascuna carta per capovolgerla e memorizzare la definizione concettuale.</p>
+                <h2>Flashcards Ufficiali di Ripasso</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Clicca su una carta per esaminare la definizione concettuale e tecnica approfondita.</p>
                 
                 <div class="flashcard-grid">
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
                             <div class="flashcard-front">Autonomia vs Adattabilità</div>
-                            <div class="flashcard-back">L'Autonomia è la capacità di svolgere compiti in contesti complessi senza intervento umano. L'Adattabilità è la capacità di migliorare le prestazioni imparando dai dati.</div>
+                            <div class="flashcard-back">L'autonomia è la capacità di operare in ambienti complessi senza controllo umano continuo. L'adattabilità è la proprietà di modificare il comportamento apprendendo dall'esperienza e dai dati.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">Narrow AI vs AGI</div>
-                            <div class="flashcard-back">Narrow AI (IA Stretta) è specializzata su un singolo compito specifico (es. scacchi). L'AGI (IA Generale) è una potenziale IA con intelligenza flessibile pari a quella umana.</div>
+                            <div class="flashcard-front">Regola di Bayes (Formula)</div>
+                            <div class="flashcard-back">P(H|E) = [P(E|H) * P(H)] / P(E). Serve a calcolare la probabilità aggiornata di un'ipotesi tenendo conto delle nuove evidenze empiriche osservate.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">Regola di Bayes</div>
-                            <div class="flashcard-back">È una formula matematica per calcolare la probabilità aggiornata di un'ipotesi basandosi sulle nuove evidenze osservate nel mondo reale.</div>
+                            <div class="flashcard-front">Ruolo della Funzione ReLU</div>
+                            <div class="flashcard-back">Applica una non-linearità azzerando i valori negativi e lasciando inalterati i positivi. Evita che la rete neurale collassi a semplici calcoli lineari.</div>
                         </div>
                     </div>
 
                     <div class="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner">
-                            <div class="flashcard-front">Algoritmo k-NN</div>
-                            <div class="flashcard-back">k-Nearest Neighbors assegna un elemento sconosciuto alla classe maggioritaria dei suoi 'k' vicini più prossimi nello spazio dei dati.</div>
+                            <div class="flashcard-front">Overfitting e Prevenzione</div>
+                            <div class="flashcard-back">Si verifica quando il modello memorizza i dati di training perdendo la capacità di generalizzare. Si previene con il Dropout, regolarizzazione e validazione indipendente.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- QUIZ -->
+        <!-- SEZIONE 4: QUIZ -->
         <div id="quiz" class="tab-content">
             <div class="card">
-                <h2>Quiz Ufficiali di Verifica</h2>
+                <h2>Verifica delle Competenze di Livello Professionale</h2>
                 
                 <div style="margin-bottom: 2.5rem;">
-                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.05rem; margin-bottom: 1rem;">Domanda 1: Quale di queste è una caratteristica fondamentale dell'IA secondo Elements of AI?</p>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">A) La coscienza e i sentimenti propri</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q1')">B) L'adattabilità e l'autonomia nelle decisioni</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">C) La capacità di funzionare senza elettricità</button>
+                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 1rem;">Domanda 1: Qual è la differenza fondamentale tra la Narrow AI e la potenziale AGI?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">A) La Narrow AI usa computer quantistici, l'AGI usa computer fissi</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q1')">B) La Narrow AI eccelle in un singolo dominio specifico, mentre l'AGI possiederebbe un'intelligenza flessibile generale pari o superiore a quella umana</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q1')">C) La Narrow AI non richiede dati di addestramento</button>
                     <div id="q1Feedback" style="margin-top: 0.8rem; font-weight: bold;"></div>
                 </div>
 
                 <hr style="border-color: var(--card-border); margin: 2rem 0;">
 
                 <div>
-                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.05rem; margin-bottom: 1rem;">Domanda 2: A cosa serve la Regola di Bayes nei filtri anti-spam?</p>
-                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q2')">A) Ad aggiornare la probabilità che un'email sia spam in base alle parole chiave trovate</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">B) A cancellare l'account di chi invia virus</button>
-                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">C) A tradurre automaticamente il testo dall'inglese</button>
+                    <p style="font-weight: bold; color: var(--accent-primary); font-size: 1.1rem; margin-bottom: 1rem;">Domanda 2: Quale libreria Python viene utilizzata principalmente per la gestione di array multidimensionali ad alte prestazioni?</p>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">A) Requests</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, false, 'q2')">B) Beautiful Soup</button>
+                    <button class="quiz-option" onclick="checkQuiz(this, true, 'q2')">C) NumPy</button>
                     <div id="q2Feedback" style="margin-top: 0.8rem; font-weight: bold;"></div>
                 </div>
             </div>
         </div>
 
-        <!-- CHATBOT TUTOR -->
+        <!-- SEZIONE 5: CHATBOT TUTOR -->
         <div id="chat" class="tab-content">
             <div class="card">
-                <h2>Tutor Virtuale per Elements of AI</h2>
-                <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Fai qualsiasi domanda concettuale sui 6 capitoli di Elements of AI!</p>
+                <h2>Tutor Didattico Avanzato AlgoGenesis</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Chiedi qualsiasi approfondimento sui capitoli di Elements of AI o sul codice PyTorch.</p>
                 
                 <div class="chat-widget">
                     <div class="chat-messages" id="chatMessages">
-                        <div class="message bot">Ciao Chiara! Sono il tutor specializzato su Elements of AI. Quale capitolo o concetto vuoi approfondire insieme?</div>
+                        <div class="message bot">Ciao Chiara! Sono il tuo tutor personale. Ora la piattaforma contiene tutti i dettagli teorici di Elements of AI uniti all'ingegneria Python di livello professionale. Dimmi pure cosa desideri approfondire!</div>
                     </div>
                     <div class="chat-input-area">
-                        <input type="text" id="userInput" placeholder="Es. Spiegami il problema di ricerca nell'IA..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <input type="text" id="userInput" placeholder="Es. Spiegami la Regola di Bayes in dettaglio..." onkeypress="if(event.key==='Enter') sendMessage()">
                         <button onclick="sendMessage()">Invia</button>
                     </div>
                 </div>
@@ -574,7 +603,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Elements of AI App — Curata da Chiara Echraibi. Tutti i diritti riservati.</p>
+        <p>&copy; 2026 AlgoGenesis & Elements of AI — Piattaforma sviluppata da Chiara Echraibi. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
@@ -606,11 +635,11 @@
 
             if (isCorrect) {
                 button.classList.add('correct');
-                feedback.innerText = "✨ Corretto! Hai compreso perfettamente il concetto di Elements of AI.";
+                feedback.innerText = "✨ Esatto! Dimostri una padronanza tecnica e concettuale eccellente.";
                 feedback.style.color = "var(--accent-success)";
             } else {
                 button.classList.add('incorrect');
-                feedback.innerText = "❌ Risposta non corretta. Rileggi il capitolo corrispondente nei riassunti!";
+                feedback.innerText = "❌ Risposta errata. Rileggi attentamente i paragrafi teorici corrispondenti!";
                 feedback.style.color = "#f87171";
             }
         }
@@ -635,13 +664,13 @@
                 
                 const lower = text.toLowerCase();
                 if (lower.includes('bayes') || lower.includes('probabilit')) {
-                    botMsg.innerText = "La Regola di Bayes ci aiuta ad aggiornare le nostre convinzioni (probabilità) su un evento man mano che raccogliamo nuove evidenze o dati dal mondo reale.";
+                    botMsg.innerText = "La Regola di Bayes calcola la probabilità di un'ipotesi correggendo il valore a priori con il peso empirico delle nuove evidenze osservate. È lo strumento cardine per gestire l'incertezza.";
+                } else if (lower.includes('python') || lower.includes('numpy') || lower.includes('pytorch')) {
+                    botMsg.innerText = "In Python sfruttiamo NumPy per vettorizzare i calcoli matematici, Pandas per la gestione tabellare dei dataset, e PyTorch per definire modelli di Deep Learning con grafi di calcolo dinamici.";
                 } else if (lower.includes('turing') || lower.includes('test')) {
-                    botMsg.innerText = "Il Test di Turing verifica se un interlocutore umano riesca a distinguere se sta conversando con una persona o con un programma di intelligenza artificiale.";
-                } else if (lower.includes('knn') || lower.includes('vicin')) {
-                    botMsg.innerText = "L'algoritmo k-Nearest Neighbors classifica un dato sconosciuto guardando ai 'k' esempi più simili presenti nel dataset di addestramento.";
+                    botMsg.innerText = "Il Test di Turing sposta il focus filosofico dell'intelligenza dalla coscienza interna alla capacità di esibire risposte testuali indistinguibili da quelle umane.";
                 } else {
-                    botMsg.innerText = "In Elements of AI l'obiettivo primario è comprendere cosa la tecnologia può realmente fare e come valutare criticamente il suo impatto sociale ed etico.";
+                    botMsg.innerText = "Analisi eccellente! Ricorda che un vero AI Developer unisce la rigorosa comprensione concettuale (stile Elements of AI) alla capacità di scrivere codice efficiente in Python.";
                 }
 
                 chatMessages.appendChild(botMsg);
